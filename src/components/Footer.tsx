@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const socials = [
@@ -12,6 +13,10 @@ const Footer = () => {
     <footer className="border-t border-border bg-surface/50 py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-6">
+          <Link to="/" className="text-xl font-bold tracking-tight">
+            <span className="text-primary neon-text">JOHN</span>
+            <span className="text-foreground">-CRAFT</span>
+          </Link>
           <div className="flex gap-4">
             {socials.map(({ icon: Icon, href, label }) => (
               <a
@@ -25,7 +30,7 @@ const Footer = () => {
             ))}
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Dev Portfolio. Built with React & Tailwind.
+            © {new Date().getFullYear()} JOHN-CRAFT. Built with React & Tailwind.
           </p>
         </div>
       </div>
