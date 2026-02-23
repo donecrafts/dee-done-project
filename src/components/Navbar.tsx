@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -8,16 +9,16 @@ interface NavbarProps {
 }
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -25,11 +26,10 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const scrollTo = (href: string) => {
+  useEffect(() => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <nav
@@ -38,22 +38,24 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <button onClick={() => scrollTo("#home")} className="text-xl font-bold text-foreground">
-          <span className="gradient-neon-text">&lt;</span>
-          Dev
-          <span className="gradient-neon-text">/&gt;</span>
-        </button>
+        {/* JOHN-CRAFT Logo */}
+        <Link to="/" className="text-xl font-bold tracking-tight">
+          <span className="text-primary neon-text">JOHN</span>
+          <span className="text-foreground">-CRAFT</span>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
+              to={link.href}
+              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
+                location.pathname === link.href ? "text-primary" : "text-muted-foreground"
+              }`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </div>
@@ -72,13 +74,15 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
         <div className="glass-strong border-t border-border md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                to={link.href}
+                className={`text-left text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === link.href ? "text-primary" : "text-muted-foreground"
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

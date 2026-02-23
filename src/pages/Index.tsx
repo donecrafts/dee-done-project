@@ -1,33 +1,73 @@
-import { useTheme } from "@/hooks/use-theme";
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
 import FreelanceAlert from "@/components/FreelanceAlert";
-import CursorGlow from "@/components/CursorGlow";
+import { Link } from "react-router-dom";
+import { useInView } from "@/hooks/use-in-view";
+import { Badge } from "@/components/ui/badge";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
-const Index = () => {
-  const { theme, toggleTheme } = useTheme();
+const FeaturedProjects = () => {
+  const [ref, inView] = useInView<HTMLElement>(0.1);
+  const featured = projects.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-background">
-      <CursorGlow />
-      <ScrollProgress />
+    <section ref={ref} className="relative py-24">
+      <div className="container mx-auto px-6">
+        <div className={`mb-16 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Portfolio</p>
+          <h2 className="text-4xl font-bold text-foreground">
+            Featured <span className="gradient-neon-text">Projects</span>
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {featured.map((project, i) => (
+            <Link
+              key={project.slug}
+              to={`/projects/${project.slug}`}
+              className={`group glass rounded-2xl overflow-hidden transition-all duration-500 neon-border-hover hover:shadow-[0_0_40px_hsl(var(--neon)/0.1)] ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              style={{ transitionDelay: inView ? `${i * 150}ms` : "0ms" }}
+            >
+              <div className="overflow-hidden border-b border-border/30">
+                <AspectRatio ratio={16 / 9}>
+                  <img src={project.image} alt={project.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                </AspectRatio>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-2 text-xl font-bold text-foreground">{project.title}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.techs.map((tech) => (
+                    <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-primary">{tech}</Badge>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className={`mt-12 text-center transition-all duration-700 delay-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105"
+          >
+            View All Projects <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Index = () => {
+  return (
+    <Layout>
       <FreelanceAlert />
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+      <Hero />
+      <FeaturedProjects />
+    </Layout>
   );
 };
 
