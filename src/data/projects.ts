@@ -1,6 +1,7 @@
 import project1Img from "@/assets/project-1.jpg";
 import project2Img from "@/assets/project-2.jpg";
 import project3Img from "@/assets/project-3.jpg";
+import goremoveImg from "@/assets/goremove.png";
 
 export type ProjectCategory = "All" | "Web Apps" | "Mobile Apps" | "SaaS" | "Dashboards";
 
@@ -19,6 +20,20 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "go-remove",
+    title: "GO-remove",
+    description: "AI-powered background removal tool that removes image backgrounds instantly with pixel-perfect accuracy.",
+    longDescription: "Built an AI-powered SaaS application that lets users remove image backgrounds in under 3 seconds. Features include HD quality output, multiple format support (PNG/JPG), transparent backgrounds, custom color/gradient backgrounds, 30-day image history, and a freemium pricing model with Pro and Enterprise tiers.",
+    image: goremoveImg,
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "AI/ML"],
+    category: "SaaS",
+    live: "https://goremove.vercel.app/",
+    github: "#",
+    features: ["AI background removal in <3s", "99% accuracy with ML models", "HD quality output", "PNG transparency support", "Custom color/gradient backgrounds", "30-day image history & storage", "Freemium pricing model", "Privacy-first processing"],
+    gallery: [goremoveImg, project1Img, project2Img],
+  },
+
   {
     slug: "e-commerce-platform",
     title: "E-Commerce Platform",
