@@ -63,7 +63,7 @@ const ProjectDetailPage = () => {
           </div>
           <div className="flex gap-3">
             <a href={project.live} className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
-              <ExternalLink className="h-4 w-4" /> Live Demo
+              <ExternalLink className="h-4 w-4" /> Visit Site
             </a>
             <a href={project.github} className="inline-flex items-center gap-2 rounded-xl border border-primary/40 px-6 py-3 font-semibold text-primary transition-all duration-300 hover:bg-primary/10">
               <Github className="h-4 w-4" /> GitHub
