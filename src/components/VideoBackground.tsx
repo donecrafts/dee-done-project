@@ -10,6 +10,7 @@ const VideoBackground = ({ src }: VideoBackgroundProps) => {
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
         src={src}
       />

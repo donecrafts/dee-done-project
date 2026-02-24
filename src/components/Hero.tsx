@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover" src="/hero-video.mp4" />
+      <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover" src="/hero-video.mp4" />
       <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
       <div
         className="absolute inset-0 opacity-[0.03]"
