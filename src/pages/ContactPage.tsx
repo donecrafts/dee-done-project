@@ -78,21 +78,21 @@ const ContactPage = () => {
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10"><Mail className="h-5 w-5 text-primary" /></div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-medium text-foreground">john@johncraft.dev</p>
+                      <a href="mailto:johndeveloper225@gmail.com" className="font-medium text-foreground hover:text-primary transition-colors">johndeveloper225@gmail.com</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10"><Phone className="h-5 w-5 text-primary" /></div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="font-medium text-foreground">+1 (555) 123-4567</p>
+                      <a href="tel:+2347062599914" className="font-medium text-foreground hover:text-primary transition-colors">+234 7062599914</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10"><MapPin className="h-5 w-5 text-primary" /></div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium text-foreground">Remote — Worldwide</p>
+                      <p className="font-medium text-foreground">Lagos, Nigeria</p>
                     </div>
                   </div>
                 </div>
