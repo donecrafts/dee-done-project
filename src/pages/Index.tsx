@@ -16,7 +16,7 @@ const FeaturedProjects = () => {
     <section ref={ref} className="relative py-24">
       <div className="container mx-auto px-6">
         <div className={`mb-16 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Portfolio</p>
+          <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Portfolio</p>
           <h2 className="text-4xl font-bold text-foreground">
             Featured <span className="gradient-neon-text">Projects</span>
           </h2>
@@ -40,7 +40,7 @@ const FeaturedProjects = () => {
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.techs.map((tech) => (
-                    <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-primary">{tech}</Badge>
+                    <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-card-foreground">{tech}</Badge>
                   ))}
                 </div>
               </div>
@@ -51,7 +51,7 @@ const FeaturedProjects = () => {
         <div className={`mt-12 text-center transition-all duration-700 delay-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105"
           >
             View All Projects <ArrowRight className="h-4 w-4" />
           </Link>

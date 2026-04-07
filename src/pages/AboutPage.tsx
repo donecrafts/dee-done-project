@@ -44,11 +44,11 @@ const AboutPage = () => {
                 <AvatarFallback>JC</AvatarFallback>
               </Avatar>
             </div>
-            <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">About Me</p>
-            <h1 className="mb-6 text-5xl font-bold text-foreground md:text-6xl">
+            <p className="mb-2 font-mono text-sm tracking-widest text-white uppercase">About Me</p>
+            <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
               Hi, I'm <span className="gradient-neon-text neon-text">John Craft</span>
             </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground">
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-white/85">
               A passionate full-stack developer with 5+ years of experience building high-performance web applications. I specialize in React ecosystems, scalable backend architectures, and cloud-native deployments.
             </p>
 
@@ -57,7 +57,7 @@ const AboutPage = () => {
                 <Badge
                   key={tech}
                   variant="outline"
-                  className={`rounded-full border-primary/30 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/15 neon-glow-hover ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                  className={`rounded-full border-white/35 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 neon-glow-hover ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                   style={{ transitionDelay: heroInView ? `${i * 50}ms` : "0ms" }}
                 >
                   {tech}
@@ -67,7 +67,7 @@ const AboutPage = () => {
 
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <button className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
+                <button className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
                   <Download className="h-4 w-4" /> Download Resume
                 </button>
               </AlertDialogTrigger>
@@ -80,7 +80,7 @@ const AboutPage = () => {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel className="rounded-xl border-border">Cancel</AlertDialogCancel>
-                  <AlertDialogAction className="rounded-xl bg-primary text-primary-foreground hover:bg-primary/90">
+                  <AlertDialogAction className="rounded-xl bg-white text-primary hover:bg-white/90">
                     Download PDF
                   </AlertDialogAction>
                 </AlertDialogFooter>
@@ -94,7 +94,7 @@ const AboutPage = () => {
       <section ref={skillsRef} className="py-24 bg-surface/50">
         <div className="container mx-auto px-6">
           <div className={`mb-16 text-center transition-all duration-700 ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Expertise</p>
+            <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Expertise</p>
             <h2 className="text-4xl font-bold text-foreground">Skills & <span className="gradient-neon-text">Technologies</span></h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -107,7 +107,7 @@ const AboutPage = () => {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                   <cat.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-4 text-lg font-bold text-foreground">{cat.title}</h3>
+                <h3 className="mb-4 text-lg font-bold text-card-foreground">{cat.title}</h3>
                 <ul className="space-y-2">
                   {cat.skills.map((skill) => (
                     <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -126,7 +126,7 @@ const AboutPage = () => {
       <section ref={timelineRef} className="py-24">
         <div className="container mx-auto px-6">
           <div className={`mb-16 text-center transition-all duration-700 ${timelineInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Journey</p>
+            <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Journey</p>
             <h2 className="text-4xl font-bold text-foreground">Experience <span className="gradient-neon-text">Timeline</span></h2>
           </div>
           <div className="mx-auto max-w-2xl space-y-8">
@@ -140,7 +140,7 @@ const AboutPage = () => {
                   <Briefcase className="h-4 w-4 text-primary" />
                   <span className="font-mono text-xs text-primary">{item.year}</span>
                 </div>
-                <h3 className="text-lg font-bold text-foreground">{item.role}</h3>
+                <h3 className="text-lg font-bold text-card-foreground">{item.role}</h3>
                 <p className="text-sm text-muted-foreground">{item.company} — {item.desc}</p>
               </div>
             ))}

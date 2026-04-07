@@ -22,11 +22,11 @@ const ProjectsPage = () => {
         <VideoBackground src="/projects-video.mp4" />
         <div className="relative z-10 container mx-auto px-6 py-32 text-center">
           <div className={`transition-all duration-700 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Portfolio</p>
-            <h1 className="mb-4 text-5xl font-bold text-foreground md:text-6xl">
+            <p className="mb-2 font-mono text-sm tracking-widest text-white uppercase">Portfolio</p>
+            <h1 className="mb-4 text-5xl font-bold text-white md:text-6xl">
               My <span className="gradient-neon-text neon-text">Projects</span>
             </h1>
-            <p className="mx-auto max-w-xl text-lg text-muted-foreground">
+            <p className="mx-auto max-w-xl text-lg text-white/85">
               A collection of applications I've built across various domains and technologies.
             </p>
           </div>
@@ -44,8 +44,8 @@ const ProjectsPage = () => {
                 onClick={() => setActiveCategory(cat)}
                 className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-primary text-primary-foreground neon-glow-sm"
-                    : "border border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-primary"
+                    ? "bg-white text-primary neon-glow-sm"
+                    : "border border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
                 }`}
               >
                 {cat}
@@ -75,14 +75,14 @@ const ProjectsPage = () => {
                   <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                   <div className="mb-5 flex flex-wrap gap-2">
                     {project.techs.map((tech) => (
-                      <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-primary">{tech}</Badge>
+                      <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-card-foreground">{tech}</Badge>
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <a href={project.live} className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--neon)/0.3)] hover:scale-105">
+                    <a href={project.live} className="flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--neon)/0.3)] hover:scale-105">
                       <ExternalLink className="h-3.5 w-3.5" /> Visit Site
                     </a>
-                    <a href={project.github} className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:text-primary">
+                    <a href={project.github} className="flex items-center gap-2 rounded-lg border border-primary/40 bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]">
                       <Github className="h-3.5 w-3.5" /> GitHub
                     </a>
                   </div>

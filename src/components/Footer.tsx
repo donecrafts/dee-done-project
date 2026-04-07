@@ -10,7 +10,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-surface/50 py-12">
+    <footer className="border-t border-border bg-background py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-6">
           <Link to="/" className="text-xl font-bold tracking-tight">
@@ -23,13 +23,13 @@ const Footer = () => {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:text-primary hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md hover:brightness-[1.02]"
               >
                 <Icon className="h-4 w-4" />
               </a>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground">
             © {new Date().getFullYear()} JOHN-CRAFT. Built with React & Tailwind.
           </p>
         </div>

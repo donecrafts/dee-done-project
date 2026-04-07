@@ -17,7 +17,7 @@ const About = () => {
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">About Me</p>
+          <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">About Me</p>
           <h2 className="mb-6 text-4xl font-bold text-foreground">
             Crafting Digital <span className="gradient-neon-text">Experiences</span>
           </h2>
@@ -33,7 +33,7 @@ const About = () => {
               <Badge
                 key={tech}
                 variant="outline"
-                className={`rounded-full border-primary/30 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/15 hover:border-primary/50 neon-glow-hover ${
+                className={`rounded-full border-primary/35 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/15 hover:border-primary/50 neon-glow-hover ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: inView ? `${i * 50}ms` : "0ms" }}

@@ -35,7 +35,7 @@ const Skills = () => {
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Expertise</p>
+          <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Expertise</p>
           <h2 className="text-4xl font-bold text-foreground">
             Skills & <span className="gradient-neon-text">Technologies</span>
           </h2>

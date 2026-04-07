@@ -39,33 +39,33 @@ const ProjectDetailPage = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+                  <Link to="/" className="text-white/70 hover:text-white transition-colors">Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-muted-foreground" />
+              <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link>
+                  <Link to="/projects" className="text-white/70 hover:text-white transition-colors">Projects</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-muted-foreground" />
+              <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-foreground">{project.title}</BreadcrumbPage>
+                <BreadcrumbPage className="text-white">{project.title}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
-          <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">{project.title}</h1>
+          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{project.title}</h1>
           <div className="flex flex-wrap gap-2 mb-6">
             {project.techs.map((tech) => (
-              <Badge key={tech} variant="outline" className="rounded-full border-primary/30 bg-primary/5 px-4 py-1 text-sm text-primary">{tech}</Badge>
+              <Badge key={tech} variant="outline" className="rounded-full border-white/35 bg-white/10 px-4 py-1 text-sm text-white backdrop-blur-sm">{tech}</Badge>
             ))}
           </div>
           <div className="flex gap-3">
-            <a href={project.live} className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
+            <a href={project.live} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
               <ExternalLink className="h-4 w-4" /> Visit Site
             </a>
-            <a href={project.github} className="inline-flex items-center gap-2 rounded-xl border border-primary/40 px-6 py-3 font-semibold text-primary transition-all duration-300 hover:bg-primary/10">
+            <a href={project.github} className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]">
               <Github className="h-4 w-4" /> GitHub
             </a>
           </div>
@@ -118,7 +118,7 @@ const ProjectDetailPage = () => {
                   <h3 className="text-lg font-bold text-foreground mb-3">Tech Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.techs.map((tech) => (
-                      <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary">{tech}</Badge>
+                      <Badge key={tech} variant="outline" className="rounded-full border-primary/25 bg-primary/10 px-3 py-1 text-xs text-card-foreground">{tech}</Badge>
                     ))}
                   </div>
                 </div>

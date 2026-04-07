@@ -44,7 +44,7 @@ const Projects = () => {
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="mb-2 font-mono text-sm tracking-widest text-primary uppercase">Portfolio</p>
+          <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Portfolio</p>
           <h2 className="text-4xl font-bold text-foreground">
             Featured <span className="gradient-neon-text">Projects</span>
           </h2>
@@ -82,7 +82,7 @@ const Projects = () => {
                     <Badge
                       key={tech}
                       variant="outline"
-                      className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-primary"
+                      className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-card-foreground"
                     >
                       {tech}
                     </Badge>
@@ -92,13 +92,13 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.live}
-                    className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--neon)/0.3)] hover:scale-105"
+                    className="flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--neon)/0.3)] hover:scale-105"
                   >
                     <ExternalLink className="h-3.5 w-3.5" /> Visit Site
                   </a>
                   <a
                     href={project.github}
-                    className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:text-primary"
+                    className="flex items-center gap-2 rounded-lg border border-primary/40 bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]"
                   >
                     <Github className="h-3.5 w-3.5" /> GitHub
                   </a>

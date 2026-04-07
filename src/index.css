@@ -5,80 +5,82 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light (sun): white / light page, wine cards */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7%;
-    --card: 0 0% 97%;
-    --card-foreground: 0 0% 7%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-    --primary: 153 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 7%;
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 153 100% 40%;
-    --accent-foreground: 0 0% 0%;
+    --background: 0 0% 98%;
+    --foreground: 350 42% 28%;
+    --card: 350 48% 38%;
+    --card-foreground: 0 0% 100%;
+    --popover: 350 48% 38%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 350 75% 55%;
+    --primary-foreground: 350 45% 30%;
+    --secondary: 350 18% 94%;
+    --secondary-foreground: 350 40% 28%;
+    --muted: 350 15% 93%;
+    --muted-foreground: 350 28% 42%;
+    --accent: 350 60% 92%;
+    --accent-foreground: 350 45% 30%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 153 100% 50%;
+    --border: 350 22% 85%;
+    --input: 350 22% 88%;
+    --ring: 350 75% 55%;
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 153 100% 50%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 153 20% 94%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 153 100% 50%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 350 42% 28%;
+    --sidebar-primary: 350 75% 55%;
+    --sidebar-primary-foreground: 350 45% 30%;
+    --sidebar-accent: 350 20% 94%;
+    --sidebar-accent-foreground: 350 42% 28%;
+    --sidebar-border: 350 22% 85%;
+    --sidebar-ring: 350 75% 55%;
 
-    --neon: 153 100% 50%;
-    --neon-soft: 153 100% 40%;
-    --surface: 0 0% 97%;
+    --neon: 350 75% 55%;
+    --neon-soft: 350 70% 60%;
+    --surface: 0 0% 96%;
     --surface-elevated: 0 0% 100%;
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
 
+  /* Dark (moon): wine page, white cards */
   .dark {
-    --background: 0 0% 0%;
+    --background: 350 45% 20%;
     --foreground: 0 0% 100%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 153 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 350 42% 28%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 42% 28%;
+    --primary: 350 75% 55%;
+    --primary-foreground: 350 45% 30%;
+    --secondary: 350 38% 28%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 153 100% 40%;
-    --accent-foreground: 0 0% 0%;
+    --muted: 350 20% 94%;
+    --muted-foreground: 350 22% 42%;
+    --accent: 350 35% 26%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 153 100% 50%;
+    --border: 350 18% 88%;
+    --input: 350 15% 90%;
+    --ring: 350 75% 55%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 153 100% 50%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 153 100% 50%;
+    --sidebar-background: 350 42% 18%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 350 75% 55%;
+    --sidebar-primary-foreground: 350 45% 30%;
+    --sidebar-accent: 350 40% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 350 25% 32%;
+    --sidebar-ring: 350 75% 55%;
 
-    --neon: 153 100% 50%;
-    --neon-soft: 153 100% 40%;
-    --surface: 0 0% 6%;
-    --surface-elevated: 0 0% 10%;
+    --neon: 350 75% 55%;
+    --neon-soft: 350 70% 60%;
+    --surface: 350 43% 24%;
+    --surface-elevated: 350 40% 28%;
   }
 }
 
@@ -97,28 +99,46 @@
 }
 
 @layer components {
+  /* Solid surfaces — plain wine (light) / plain white (dark), no frosted blur */
   .glass {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    @apply bg-card border border-border text-card-foreground shadow-sm;
   }
 
   .glass-strong {
-    @apply bg-card/80 backdrop-blur-2xl border border-border/60;
+    @apply bg-card border border-border text-card-foreground shadow-md;
+  }
+
+  /* Muted body text on wine cards (light) vs white cards (dark) */
+  :root .glass .text-muted-foreground,
+  :root .glass-strong .text-muted-foreground {
+    color: hsl(var(--card-foreground) / 0.78);
+  }
+
+  .dark .glass .text-muted-foreground,
+  .dark .glass-strong .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Headings/body that still use text-foreground should match the card surface */
+  .glass .text-foreground,
+  .glass-strong .text-foreground {
+    color: hsl(var(--card-foreground));
   }
 
   .neon-glow {
-    box-shadow: 0 0 20px hsl(var(--neon) / 0.3), 0 0 60px hsl(var(--neon) / 0.1);
+    box-shadow: 0 0 25px hsl(var(--neon) / 0.5), 0 0 80px hsl(var(--neon) / 0.2);
   }
 
   .neon-glow-sm {
-    box-shadow: 0 0 10px hsl(var(--neon) / 0.2), 0 0 30px hsl(var(--neon) / 0.05);
+    box-shadow: 0 0 15px hsl(var(--neon) / 0.4), 0 0 40px hsl(var(--neon) / 0.1);
   }
 
   .neon-glow-hover:hover {
-    box-shadow: 0 0 20px hsl(var(--neon) / 0.4), 0 0 60px hsl(var(--neon) / 0.15);
+    box-shadow: 0 0 25px hsl(var(--neon) / 0.6), 0 0 80px hsl(var(--neon) / 0.25);
   }
 
   .neon-text {
-    text-shadow: 0 0 20px hsl(var(--neon) / 0.5), 0 0 40px hsl(var(--neon) / 0.2);
+    text-shadow: 0 0 25px hsl(var(--neon) / 0.6), 0 0 50px hsl(var(--neon) / 0.3);
   }
 
   .neon-border {
@@ -133,11 +153,15 @@
     background: linear-gradient(135deg, hsl(var(--neon)), hsl(var(--neon-soft)));
   }
 
+  /* Light: wine accent on white page; dark: white on wine page */
   .gradient-neon-text {
-    background: linear-gradient(135deg, hsl(var(--neon)), hsl(var(--neon-soft)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(var(--primary));
+    -webkit-text-fill-color: hsl(var(--primary));
+  }
+
+  .dark .gradient-neon-text {
+    color: rgb(255 255 255);
+    -webkit-text-fill-color: rgb(255 255 255);
   }
 
   .cursor-glow {
@@ -151,6 +175,12 @@
     transform: translate(-50%, -50%);
     transition: opacity 0.3s;
   }
+}
+
+/* Hero over video: white text in both themes (overrides .gradient-neon-text) */
+.hero-over-video .gradient-neon-text {
+  color: rgb(255 255 255);
+  -webkit-text-fill-color: rgb(255 255 255);
 }
 
 @layer utilities {
@@ -177,15 +207,19 @@
   50% { box-shadow: 0 0 40px hsl(var(--neon) / 0.5), 0 0 80px hsl(var(--neon) / 0.2); }
 }
 
-/* Scroll progress bar */
+/* Scroll progress — wine on light page, white on wine page */
 .scroll-progress {
   position: fixed;
   top: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, hsl(var(--neon)), hsl(var(--neon-soft)));
+  right: 0;
+  width: 4px;
+  background: hsl(var(--primary));
   z-index: 9999;
-  transition: width 0.1s linear;
+  transition: height 0.1s linear;
+}
+
+.dark .scroll-progress {
+  background: rgb(255 255 255);
 }
 
 /* Scrollbar styling */
