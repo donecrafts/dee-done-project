@@ -14,7 +14,7 @@ const VideoBackground = ({ src }: VideoBackgroundProps) => {
         className="absolute inset-0 h-full w-full object-cover"
         src={src}
       />
-      <div className="absolute inset-0 bg-[#722F37]/60 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-[hsl(260_35%_12%/0.72)] backdrop-blur-[2px]" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{

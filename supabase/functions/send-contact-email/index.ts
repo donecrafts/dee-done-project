@@ -15,6 +15,17 @@ interface ContactRequest {
   message: string;
 }
 
+const DEFAULT_INBOX = "njohndeveloper225@gmail.com";
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -27,18 +38,24 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Missing required fields: name, email, message");
     }
 
+    const to = Deno.env.get("CONTACT_TO_EMAIL")?.trim() || DEFAULT_INBOX;
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message).replace(/\r\n|\n|\r/g, "<br/>");
+
     const emailResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["johndeveloper225@gmail.com"],
-      subject: `New Contact Form Message from ${name}`,
+      to: [to],
+      subject: `Portfolio: ${name} (${email})`,
       replyTo: email,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <h2>New contact from your portfolio</h2>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> <a href="mailto:${encodeURIComponent(email)}">${safeEmail}</a></p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p style="white-space:pre-wrap;">${safeMessage}</p>
       `,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     console.log("Contact email sent successfully:", emailResponse);
@@ -47,15 +64,13 @@ const handler = async (req: Request): Promise<Response> => {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
     console.error("Error sending contact email:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ error: message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 

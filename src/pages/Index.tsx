@@ -1,38 +1,71 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import FreelanceAlert from "@/components/FreelanceAlert";
+import MarqueeStrip from "@/components/MarqueeStrip";
+import HomeAboutSection from "@/components/home/HomeAboutSection";
+import HomeSkillsSection from "@/components/home/HomeSkillsSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import HomeContactTeaser from "@/components/home/HomeContactTeaser";
 import { Link } from "react-router-dom";
 import { useInView } from "@/hooks/use-in-view";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { ExternalLink, ArrowRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
+import { projects, projectCardImageClass, projectCardMediaBackdropClass, projectLiveRibbon } from "@/data/projects";
 
 const FeaturedProjects = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);
-  const featured = projects.slice(0, 3);
 
   return (
-    <section ref={ref} className="relative py-24">
+    <section id="projects" ref={ref} className="scroll-mt-24 relative py-24">
       <div className="container mx-auto px-6">
         <div className={`mb-16 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Portfolio</p>
-          <h2 className="text-4xl font-bold text-foreground">
-            Featured <span className="gradient-neon-text">Projects</span>
+          <h2 className="text-4xl font-bold">
+            <span className="text-foreground">Featured </span>
+            <span className="text-gradient-spectrum inline-block">Projects</span>
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            A selection of projects that showcase my technical range and passion for building great products.
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project, i) => (
+          {projects.map((project, i) => {
+            const ribbon = projectLiveRibbon(project);
+            return (
             <Link
               key={project.slug}
               to={`/projects/${project.slug}`}
-              className={`group glass rounded-2xl overflow-hidden transition-all duration-500 neon-border-hover hover:shadow-[0_0_40px_hsl(var(--neon)/0.1)] ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-              style={{ transitionDelay: inView ? `${i * 150}ms` : "0ms" }}
+              className={`group relative rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-500 hover:border-primary/25 hover:shadow-[0_0_40px_hsl(var(--neon)/0.08)] ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="overflow-hidden border-b border-border/30">
+              {project.featured && (
+                <Badge className="absolute right-4 top-4 z-20 rounded-full bg-primary text-primary-foreground shadow-md">Featured</Badge>
+              )}
+              <div className="relative overflow-hidden border-b border-border/30">
+                {ribbon ? (
+                  <div className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between gap-2 border-b border-white/10 bg-black/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white/95 backdrop-blur-md">
+                    <span>{ribbon.title}</span>
+                    {ribbon.subtitle ? <span className="font-medium text-white/65">{ribbon.subtitle}</span> : null}
+                  </div>
+                ) : null}
                 <AspectRatio ratio={16 / 9}>
-                  <img src={project.image} alt={project.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  {project.cardImageFit === "contain" ? (
+                    <div className={projectCardMediaBackdropClass(project)}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className={projectCardImageClass(project)}
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={projectCardImageClass(project)}
+                      loading="lazy"
+                    />
+                  )}
                 </AspectRatio>
               </div>
               <div className="p-6">
@@ -40,20 +73,23 @@ const FeaturedProjects = () => {
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.techs.map((tech) => (
-                    <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-card-foreground">{tech}</Badge>
+                    <Badge key={tech} variant="outline" className="rounded-full border-primary/20 bg-primary/5 px-3 py-0.5 text-xs text-card-foreground">
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
 
         <div className={`mt-12 text-center transition-all duration-700 delay-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 font-semibold text-primary-foreground shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:scale-105"
           >
-            View All Projects <ArrowRight className="h-4 w-4" />
+            View all projects <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
@@ -64,9 +100,15 @@ const FeaturedProjects = () => {
 const Index = () => {
   return (
     <Layout>
-      <FreelanceAlert />
+      <div className="pt-16">
+        <MarqueeStrip />
+      </div>
       <Hero />
+      <HomeAboutSection />
+      <HomeSkillsSection />
       <FeaturedProjects />
+      <TestimonialsSection />
+      <HomeContactTeaser />
     </Layout>
   );
 };

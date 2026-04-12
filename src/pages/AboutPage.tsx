@@ -91,7 +91,7 @@ const AboutPage = () => {
       </section>
 
       {/* Skills */}
-      <section ref={skillsRef} className="py-24 bg-surface/50">
+      <section id="expertise" ref={skillsRef} className="scroll-mt-24 py-24 bg-surface/50">
         <div className="container mx-auto px-6">
           <div className={`mb-16 text-center transition-all duration-700 ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">Expertise</p>

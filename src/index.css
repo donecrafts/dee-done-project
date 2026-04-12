@@ -1,86 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Theme tokens aligned with gratitude-digital-studio.vercel.app
+ * (HSL design system from their built stylesheet.)
+ */
 @layer base {
-  /* Light (sun): white / light page, wine cards */
   :root {
-    --background: 0 0% 98%;
-    --foreground: 350 42% 28%;
-    --card: 350 48% 38%;
-    --card-foreground: 0 0% 100%;
-    --popover: 350 48% 38%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 350 75% 55%;
-    --primary-foreground: 350 45% 30%;
-    --secondary: 350 18% 94%;
-    --secondary-foreground: 350 40% 28%;
-    --muted: 350 15% 93%;
-    --muted-foreground: 350 28% 42%;
-    --accent: 350 60% 92%;
-    --accent-foreground: 350 45% 30%;
-    --destructive: 0 84% 60%;
+    --background: 0 0% 100%;
+    --foreground: 345 40% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 345 40% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 40% 15%;
+    --primary: 345 80% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 345 20% 95%;
+    --secondary-foreground: 345 40% 15%;
+    --muted: 345 15% 94%;
+    --muted-foreground: 345 10% 45%;
+    --accent: 345 80% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 350 22% 85%;
-    --input: 350 22% 88%;
-    --ring: 350 75% 55%;
+    --border: 345 20% 90%;
+    --input: 345 20% 90%;
+    --ring: 345 80% 30%;
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 97%;
-    --sidebar-foreground: 350 42% 28%;
-    --sidebar-primary: 350 75% 55%;
-    --sidebar-primary-foreground: 350 45% 30%;
-    --sidebar-accent: 350 20% 94%;
-    --sidebar-accent-foreground: 350 42% 28%;
-    --sidebar-border: 350 22% 85%;
-    --sidebar-ring: 350 75% 55%;
+    --sidebar-background: 345 25% 98%;
+    --sidebar-foreground: 345 40% 15%;
+    --sidebar-primary: 345 80% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 345 20% 95%;
+    --sidebar-accent-foreground: 345 40% 15%;
+    --sidebar-border: 345 20% 90%;
+    --sidebar-ring: 345 80% 30%;
 
-    --neon: 350 75% 55%;
-    --neon-soft: 350 70% 60%;
-    --surface: 0 0% 96%;
+    --neon: 345 80% 34%;
+    --neon-soft: 330 70% 40%;
+    --surface: 345 18% 96%;
     --surface-elevated: 0 0% 100%;
 
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --gradient-primary: linear-gradient(135deg, hsl(345 80% 30%), hsl(330 70% 40%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 98%), hsl(345 20% 96%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(345 15% 97%));
+    --glow-primary: 0 0 40px hsl(345 80% 30% / 0.25);
+    --shadow-premium: 0 20px 60px -15px hsl(345 80% 20% / 0.15);
+
+    --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
   }
 
-  /* Dark (moon): wine page, white cards */
   .dark {
-    --background: 350 45% 20%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 100%;
-    --card-foreground: 350 42% 28%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 350 42% 28%;
-    --primary: 350 75% 55%;
-    --primary-foreground: 350 45% 30%;
-    --secondary: 350 38% 28%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 350 20% 94%;
-    --muted-foreground: 350 22% 42%;
-    --accent: 350 35% 26%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 350 18% 88%;
-    --input: 350 15% 90%;
-    --ring: 350 75% 55%;
+    --background: 260 20% 8%;
+    --foreground: 0 0% 95%;
+    --card: 260 18% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 260 18% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 280 80% 65%;
+    --primary-foreground: 260 20% 8%;
+    --secondary: 260 15% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 260 15% 18%;
+    --muted-foreground: 260 10% 60%;
+    --accent: 200 90% 60%;
+    --accent-foreground: 260 20% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 260 15% 22%;
+    --input: 260 15% 22%;
+    --ring: 280 80% 65%;
 
-    --sidebar-background: 350 42% 18%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 350 75% 55%;
-    --sidebar-primary-foreground: 350 45% 30%;
-    --sidebar-accent: 350 40% 28%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 350 25% 32%;
-    --sidebar-ring: 350 75% 55%;
+    --sidebar-background: 260 22% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 280 80% 65%;
+    --sidebar-primary-foreground: 260 20% 8%;
+    --sidebar-accent: 260 15% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 260 15% 22%;
+    --sidebar-ring: 280 80% 65%;
 
-    --neon: 350 75% 55%;
-    --neon-soft: 350 70% 60%;
-    --surface: 350 43% 24%;
-    --surface-elevated: 350 40% 28%;
+    --neon: 280 80% 65%;
+    --neon-soft: 200 90% 60%;
+    --surface: 260 18% 11%;
+    --surface-elevated: 260 18% 14%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(340 90% 60%), hsl(280 80% 65%), hsl(200 90% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(260 20% 8%), hsl(280 15% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(260 18% 14%), hsl(280 15% 12%));
+    --glow-primary: 0 0 40px hsl(280 80% 65% / 0.35);
+    --shadow-premium: 0 20px 60px -15px hsl(280 80% 30% / 0.5);
   }
 }
 
@@ -91,15 +105,20 @@
 
   body {
     @apply bg-background text-foreground font-heading antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
 
 @layer components {
-  /* Solid surfaces — plain wine (light) / plain white (dark), no frosted blur */
   .glass {
     @apply bg-card border border-border text-card-foreground shadow-sm;
   }
@@ -108,10 +127,9 @@
     @apply bg-card border border-border text-card-foreground shadow-md;
   }
 
-  /* Muted body text on wine cards (light) vs white cards (dark) */
   :root .glass .text-muted-foreground,
   :root .glass-strong .text-muted-foreground {
-    color: hsl(var(--card-foreground) / 0.78);
+    color: hsl(var(--muted-foreground));
   }
 
   .dark .glass .text-muted-foreground,
@@ -119,49 +137,78 @@
     color: hsl(var(--muted-foreground));
   }
 
-  /* Headings/body that still use text-foreground should match the card surface */
   .glass .text-foreground,
   .glass-strong .text-foreground {
     color: hsl(var(--card-foreground));
   }
 
   .neon-glow {
-    box-shadow: 0 0 25px hsl(var(--neon) / 0.5), 0 0 80px hsl(var(--neon) / 0.2);
+    box-shadow: var(--glow-primary), 0 0 80px hsl(var(--neon) / 0.15);
   }
 
   .neon-glow-sm {
-    box-shadow: 0 0 15px hsl(var(--neon) / 0.4), 0 0 40px hsl(var(--neon) / 0.1);
+    box-shadow: var(--glow-primary);
   }
 
   .neon-glow-hover:hover {
-    box-shadow: 0 0 25px hsl(var(--neon) / 0.6), 0 0 80px hsl(var(--neon) / 0.25);
+    box-shadow: var(--glow-primary), 0 0 80px hsl(var(--neon) / 0.22);
   }
 
   .neon-text {
-    text-shadow: 0 0 25px hsl(var(--neon) / 0.6), 0 0 50px hsl(var(--neon) / 0.3);
+    text-shadow: 0 0 24px hsl(345 80% 36% / 0.35), 0 0 48px hsl(345 80% 30% / 0.2);
+  }
+
+  .dark .neon-text {
+    text-shadow: 0 0 28px hsl(280 80% 60% / 0.45), 0 0 56px hsl(200 90% 50% / 0.15);
   }
 
   .neon-border {
-    border-color: hsl(var(--neon) / 0.3);
+    border-color: hsl(var(--neon) / 0.35);
   }
 
   .neon-border-hover:hover {
-    border-color: hsl(var(--neon) / 0.6);
+    border-color: hsl(var(--neon) / 0.55);
   }
 
   .gradient-neon {
-    background: linear-gradient(135deg, hsl(var(--neon)), hsl(var(--neon-soft)));
+    background: var(--gradient-primary);
   }
 
-  /* Light: wine accent on white page; dark: white on wine page */
+  /* Match reference “gradient-text” (clip to text) */
   .gradient-neon-text {
-    color: hsl(var(--primary));
-    -webkit-text-fill-color: hsl(var(--primary));
+    background: linear-gradient(90deg, hsl(var(--primary)), #d92653);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .dark .gradient-neon-text {
-    color: rgb(255 255 255);
-    -webkit-text-fill-color: rgb(255 255 255);
+    background: linear-gradient(90deg, #f53d7a, #fac938, #19e6a2, #3db8f5, #be5eed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Section / hero accents — horizontal spectrum (reference headings) */
+  .text-gradient-spectrum {
+    background-image: linear-gradient(
+      90deg,
+      #ff5d73,
+      #ff8e53,
+      #ffd15c,
+      #7dd957,
+      #2dd4bf,
+      #38bdf8,
+      #60a5fa,
+      #a78bfa,
+      #c084fc
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .cursor-glow {
@@ -169,7 +216,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, hsl(var(--neon) / 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, hsl(var(--neon) / 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
@@ -177,8 +224,9 @@
   }
 }
 
-/* Hero over video: white text in both themes (overrides .gradient-neon-text) */
+/* Hero / video sections: keep headline readable on media overlays */
 .hero-over-video .gradient-neon-text {
+  background: none;
   color: rgb(255 255 255);
   -webkit-text-fill-color: rgb(255 255 255);
 }
@@ -195,19 +243,32 @@
   .animate-glow-pulse {
     animation: glow-pulse 2s ease-in-out infinite;
   }
+
+  .gradient-text {
+    @apply gradient-neon-text;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px hsl(var(--neon) / 0.3); }
-  50% { box-shadow: 0 0 40px hsl(var(--neon) / 0.5), 0 0 80px hsl(var(--neon) / 0.2); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--neon) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--neon) / 0.45), 0 0 80px hsl(var(--neon) / 0.2);
+  }
 }
 
-/* Scroll progress — wine on light page, white on wine page */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -219,10 +280,9 @@
 }
 
 .dark .scroll-progress {
-  background: rgb(255 255 255);
+  background: hsl(var(--primary));
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -232,10 +292,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
+  background: hsl(var(--muted-foreground) / 0.35);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--neon) / 0.5);
+  background: hsl(var(--neon) / 0.55);
 }

@@ -2,7 +2,7 @@ import { useState, FormEvent } from "react";
 import { useInView } from "@/hooks/use-in-view";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitContactForm } from "@/lib/submit-contact";
 
 const Contact = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);
@@ -19,19 +19,16 @@ const Contact = () => {
     setError("");
 
     try {
-      const { data, error: fnError } = await supabase.functions.invoke("send-contact-email", {
-        body: { name, email, message },
-      });
-
-      if (fnError) throw fnError;
+      await submitContactForm({ name, email, message });
 
       setSubmitted(true);
       setName("");
       setEmail("");
       setMessage("");
       setTimeout(() => setSubmitted(false), 5000);
-    } catch (err: any) {
-      setError(err.message || "Failed to send message. Please try again.");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Failed to send message. Please try again.";
+      setError(msg);
     } finally {
       setLoading(false);
     }

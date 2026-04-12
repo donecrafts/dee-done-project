@@ -8,7 +8,7 @@ import {
   Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ExternalLink, Github, ArrowLeft, CheckCircle } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects, projectLiveLinkLabel, projectDetailPreviewWrapClass, projectDetailPreviewImgClass } from "@/data/projects";
 
 const ProjectDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -61,13 +61,25 @@ const ProjectDetailPage = () => {
               <Badge key={tech} variant="outline" className="rounded-full border-white/35 bg-white/10 px-4 py-1 text-sm text-white backdrop-blur-sm">{tech}</Badge>
             ))}
           </div>
-          <div className="flex gap-3">
-            <a href={project.live} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105">
-              <ExternalLink className="h-4 w-4" /> Visit Site
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] hover:scale-105"
+            >
+              <ExternalLink className="h-4 w-4" /> {projectLiveLinkLabel(project.live)}
             </a>
-            <a href={project.github} className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]">
-              <Github className="h-4 w-4" /> GitHub
-            </a>
+            {project.github ? (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]"
+              >
+                <Github className="h-4 w-4" /> GitHub
+              </a>
+            ) : null}
           </div>
         </div>
       </section>
@@ -81,7 +93,13 @@ const ProjectDetailPage = () => {
               {/* Large preview */}
               <div className="glass rounded-2xl overflow-hidden mb-8 neon-border-hover">
                 <AspectRatio ratio={16 / 9}>
-                  <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
+                  {project.cardImageFit === "contain" ? (
+                    <div className={projectDetailPreviewWrapClass(project)}>
+                      <img src={project.image} alt={project.title} className={projectDetailPreviewImgClass(project)} />
+                    </div>
+                  ) : (
+                    <img src={project.image} alt={project.title} className={projectDetailPreviewImgClass(project)} />
+                  )}
                 </AspectRatio>
               </div>
 
@@ -94,7 +112,13 @@ const ProjectDetailPage = () => {
                 {project.gallery.map((img, i) => (
                   <div key={i} className="glass rounded-xl overflow-hidden neon-border-hover">
                     <AspectRatio ratio={16 / 9}>
-                      <img src={img} alt={`${project.title} screenshot ${i + 1}`} className="h-full w-full object-cover" loading="lazy" />
+                      {project.cardImageFit === "contain" ? (
+                        <div className={projectDetailPreviewWrapClass(project)}>
+                          <img src={img} alt={`${project.title} screenshot ${i + 1}`} className={projectDetailPreviewImgClass(project)} loading="lazy" />
+                        </div>
+                      ) : (
+                        <img src={img} alt={`${project.title} screenshot ${i + 1}`} className={projectDetailPreviewImgClass(project)} loading="lazy" />
+                      )}
                     </AspectRatio>
                   </div>
                 ))}
