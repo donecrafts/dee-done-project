@@ -31,7 +31,7 @@ const AmbientPageBackground = () => {
       <div
         className={cn(
           "absolute inset-0 backdrop-blur-[0.5px]",
-          isDark ? "bg-[hsl(260_20%_8%/0.82)]" : "bg-[hsl(0_0%_100%/0.72)]",
+          isDark ? "bg-[hsl(350_45%_20%/0.82)]" : "bg-[hsl(0_0%_100%/0.72)]",
         )}
       />
     </div>

@@ -22,10 +22,7 @@ const About = () => {
             Crafting Digital <span className="gradient-neon-text">Experiences</span>
           </h2>
           <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-            I'm a passionate full-stack developer with 5+ years of experience building
-            high-performance web applications. I specialize in React ecosystems, scalable
-            backend architectures, and cloud-native deployments. I love turning complex
-            problems into simple, elegant, and intuitive solutions.
+            I&apos;m Samuel John, a Python and AI developer building smart solutions—from intelligent APIs and machine learning integrations to polished web and mobile products that solve real problems.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">

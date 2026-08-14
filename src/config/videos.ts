@@ -1,10 +1,5 @@
 /**
- * Two different assets:
- * - Hero: full-bleed behind the first section only (`Hero.tsx`).
- * - Page: fixed behind the whole site (`AmbientPageBackground.tsx` in `Layout`).
- *
- * Add both files under `/public/`. If `ambient-page-background.mp4` is missing,
- * a different remote loop is used so it never matches the hero file.
+ * Hero background — served from `/public/hero-video.mp4` (keep under ~2MB for instant load).
  */
 export const HERO_BACKGROUND_VIDEO = "/hero-video.mp4";
 

@@ -1,8 +1,8 @@
 import { useInView } from "@/hooks/use-in-view";
 import { homeSkillCards } from "@/data/homeSkills";
-import { Layers, LayoutTemplate, Server, Database, Cloud, Gauge } from "lucide-react";
+import { Brain, Bot, Server, Database, Smartphone, Cloud, Workflow, Megaphone } from "lucide-react";
 
-const icons = [Layers, LayoutTemplate, Server, Database, Cloud, Gauge] as const;
+const icons = [Brain, Bot, Server, Workflow, Megaphone, Database, Smartphone, Cloud] as const;
 
 const HomeSkillsSection = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);
@@ -16,13 +16,13 @@ const HomeSkillsSection = () => {
             <span className="text-gradient-spectrum inline-block">Skills</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            A comprehensive toolkit built through years of real-world projects and continuous learning.
+            Python, AI, ComfyUI, GoHighLevel, and full product engineering—built through real projects, intelligent automation, and production deployments.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {homeSkillCards.map((card, i) => {
-            const Icon = icons[i] ?? Layers;
+            const Icon = icons[i] ?? Brain;
             return (
               <div
                 key={card.title}
@@ -35,10 +35,10 @@ const HomeSkillsSection = () => {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/92 to-white/15 dark:from-card dark:via-card/95 dark:to-card/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/92 to-card/10" />
                 <div className="absolute inset-x-0 bottom-0 p-5 pt-12">
-                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/12 text-primary dark:bg-primary/15">
-                    <Icon className="h-5 w-5" />
+                  <div className="skill-icon-badge mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
+                    <Icon className="h-5 w-5" aria-hidden />
                   </div>
                   <h3 className="mb-1.5 text-lg font-bold text-foreground">{card.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{card.description}</p>

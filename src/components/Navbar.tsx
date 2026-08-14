@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
+import { BRAND_LOGO } from "@/config/brand";
 
 interface NavbarProps {
   theme: "dark" | "light";
@@ -17,7 +18,7 @@ const navItems: NavItem[] = [
   { label: "Skills", href: "/", hash: "#skills" },
   { label: "Projects", href: "/projects" },
   { label: "Testimonials", href: "/", hash: "#testimonials" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/", hash: "#contact" },
 ];
 
 function linkTo(item: NavItem) {
@@ -85,16 +86,16 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
           <div className="rounded-xl bg-gradient-to-br from-[#f472b6] via-[#a78bfa] to-[#22d3ee] p-px shadow-sm">
             <div
               className={cn(
-                "flex h-9 w-9 items-center justify-center rounded-[10px] text-xs font-bold",
+                "h-9 w-9 overflow-hidden rounded-[10px]",
                 isLight && "bg-background",
-                !isLight && !scrolled && "bg-black/45 backdrop-blur-md",
+                !isLight && !scrolled && "bg-primary/45 backdrop-blur-md",
                 !isLight && scrolled && "bg-card",
               )}
             >
-              <span className="text-gradient-spectrum">JC</span>
+              <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
             </div>
           </div>
-          <span className="text-gradient-spectrum hidden text-lg uppercase tracking-tight sm:inline md:text-xl">John Craft</span>
+          <span className="text-gradient-spectrum hidden text-lg tracking-tight sm:inline md:text-xl">Samuel John</span>
         </Link>
 
         <div className="hidden items-center justify-center gap-5 lg:flex xl:gap-7">
@@ -108,7 +109,7 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
         <div className="flex items-center justify-end gap-2 sm:gap-3">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <Link to="/contact" className={cn(hireClass, "hidden sm:inline-flex")}>
-            Get In Touch
+            Hire me
           </Link>
           <button
             type="button"
@@ -133,7 +134,7 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
               </Link>
             ))}
             <Link to="/contact" className={cn(hireClass, "mt-2 w-full py-3")}>
-              Get In Touch
+              Hire me
             </Link>
           </div>
         </div>

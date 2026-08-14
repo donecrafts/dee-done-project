@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/use-in-view";
 import { Sparkles, Heart } from "lucide-react";
-import avatarImg from "@/assets/avatar.jpg";
+import avatarImg from "@/assets/avatar.png";
+import { BRAND_LOGO } from "@/config/brand";
 
 const HomeAboutSection = () => {
   const [ref, inView] = useInView<HTMLElement>(0.12);
@@ -20,42 +21,42 @@ const HomeAboutSection = () => {
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-              <img src={avatarImg} alt="John Craft" className="aspect-[4/5] w-full object-cover" loading="lazy" />
+              <img src={avatarImg} alt="Samuel John" className="aspect-[4/5] w-full object-cover" loading="lazy" />
               <div className="absolute bottom-0 left-0 right-0 border-t border-border/60 bg-card/95 p-5 backdrop-blur-sm">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">JC</div>
-                <p className="text-lg font-bold text-card-foreground">John Craft</p>
-                <p className="text-sm font-medium text-primary">Full-Stack Developer</p>
+                <div className="mb-3 h-12 w-12 overflow-hidden rounded-full border border-border/40 bg-card shadow-sm">
+                  <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
+                </div>
+                <p className="text-lg font-bold text-card-foreground">Samuel John</p>
+                <p className="text-sm font-medium text-card-foreground dark:text-primary">Python and AI Developer Building Smart Solutions</p>
               </div>
             </div>
           </div>
 
           <div className={`space-y-6 transition-all duration-700 delay-100 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              I&apos;m John Craft, a passionate full-stack developer dedicated to building digital systems that create real impact. With expertise spanning
-              frontend, backend, and cloud architecture, I turn complex problems into elegant solutions.
+              I&apos;m Samuel John, a Python and AI developer focused on building intelligent applications that solve real problems. From AI-powered mobile products like Sauce to production web platforms, I combine Python backends, machine learning, and clean engineering to deliver smart solutions.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              My mission is to build a powerful portfolio of production-grade applications that solve real problems. I combine technical depth with design
-              sensibility to deliver experiences that users love.
+              I work across the stack—designing APIs, integrating AI models, and shipping polished apps that turn complex ideas into reliable, user-ready products.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Sparkles className="h-5 w-5" />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
+                  <Heart className="h-5 w-5" aria-hidden />
                 </div>
-                <h3 className="mb-2 font-semibold text-foreground">My Vision</h3>
+                <h3 className="mb-2 font-semibold text-card-foreground">My mission</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  To craft scalable, user-centered digital products that push boundaries and make a lasting impact.
+                  Build AI-powered applications that solve real problems with Python, thoughtful architecture, and production-grade code.
                 </p>
               </div>
               <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Heart className="h-5 w-5" />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
+                  <Sparkles className="h-5 w-5" aria-hidden />
                 </div>
-                <h3 className="mb-2 font-semibold text-foreground">My Values</h3>
+                <h3 className="mb-2 font-semibold text-card-foreground">My vision</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Clean code, thoughtful design, continuous learning, and delivering genuine value to every project.
+                  To create intelligent, scalable digital products that harness AI to make everyday experiences smarter and more impactful.
                 </p>
               </div>
             </div>
