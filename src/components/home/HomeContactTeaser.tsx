@@ -1,5 +1,12 @@
 import { useInView } from "@/hooks/use-in-view";
+import { Mail, MapPin, Twitter } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+
+const iconBoxClass =
+  "card-icon-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-xl";
+
+const cardClass =
+  "flex gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all hover:border-primary/25 hover:shadow-md";
 
 const HomeContactTeaser = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);
@@ -17,12 +24,46 @@ const HomeContactTeaser = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={`space-y-4 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <h3 className="text-lg font-semibold text-foreground">Get In Touch</h3>
+            <h3 className="text-lg font-semibold text-foreground">Get in touch</h3>
             <p className="leading-relaxed text-muted-foreground">
-              Whether you have a project idea, want to collaborate, or just want to say hello — my inbox is always open.
+              Whether you have a project idea, want to collaborate, or just want to say hello—my inbox is always open.
             </p>
+
+            <a href="mailto:doneporpor@gmail.com" className="block">
+              <div className={cardClass}>
+                <div className={iconBoxClass}>
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Email</p>
+                  <p className="font-medium text-foreground">doneporpor@gmail.com</p>
+                </div>
+              </div>
+            </a>
+
+            <div className={cardClass}>
+              <div className={iconBoxClass}>
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Address</p>
+                <p className="font-medium text-foreground">Osogbo, Nigeria</p>
+              </div>
+            </div>
+
+            <a href="https://x.com/donecraft225" target="_blank" rel="noreferrer" className="block">
+              <div className={cardClass}>
+                <div className={iconBoxClass}>
+                  <Twitter className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">X Profile</p>
+                  <p className="font-medium text-foreground">@donecraft225</p>
+                </div>
+              </div>
+            </a>
           </div>
 
           <div

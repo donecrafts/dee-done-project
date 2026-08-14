@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import MarqueeStrip from "@/components/MarqueeStrip";
 import HomeAboutSection from "@/components/home/HomeAboutSection";
 import HomeSkillsSection from "@/components/home/HomeSkillsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
@@ -100,9 +99,6 @@ const FeaturedProjects = () => {
 const Index = () => {
   return (
     <Layout>
-      <div className="pt-16">
-        <MarqueeStrip />
-      </div>
       <Hero />
       <HomeAboutSection />
       <HomeSkillsSection />

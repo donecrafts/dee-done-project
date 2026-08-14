@@ -8,22 +8,23 @@ import {
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Code2, Server, Cloud, Wrench, Download, Briefcase } from "lucide-react";
-import avatarImg from "@/assets/avatar.jpg";
+import avatarImg from "@/assets/avatar.png";
+import { BRAND_LOGO } from "@/config/brand";
 
-const techs = ["React", "Next.js", "TypeScript", "Node.js", "Python", "MongoDB", "PostgreSQL", "GraphQL", "Docker", "AWS", "Tailwind CSS", "Figma"];
+const techs = ["Python", "FastAPI", "ComfyUI", "AI Automation", "GoHighLevel", "React", "PostgreSQL", "Docker", "AWS", "OpenAI API", "Tailwind CSS"];
 
 const timeline = [
-  { year: "2024 – Present", role: "Senior Full Stack Developer", company: "Tech Corp", desc: "Leading development of enterprise SaaS platform." },
-  { year: "2022 – 2024", role: "Full Stack Developer", company: "StartupXYZ", desc: "Built and scaled multiple client-facing web applications." },
-  { year: "2020 – 2022", role: "Frontend Developer", company: "Digital Agency", desc: "Created responsive and accessible web interfaces." },
-  { year: "2019 – 2020", role: "Junior Developer", company: "Freelance", desc: "Started building websites and web applications for clients." },
+  { year: "2024 – Present", role: "Python & AI Developer", company: "Independent / Product Builder", desc: "Building AI-powered mobile and web applications, including intelligent recipe extraction and production app launches." },
+  { year: "2022 – 2024", role: "Backend & AI Engineer", company: "Freelance & Contract", desc: "Developed Python APIs, ML integrations, and scalable backends for client-facing digital products." },
+  { year: "2020 – 2022", role: "Software Developer", company: "Digital Projects", desc: "Shipped web applications and automation tools with Python, JavaScript, and cloud deployments." },
+  { year: "2019 – 2020", role: "Junior Developer", company: "Freelance", desc: "Started building websites, scripts, and early AI-assisted workflows for small business clients." },
 ];
 
 const skillCategories = [
-  { icon: Code2, title: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"] },
-  { icon: Server, title: "Backend", skills: ["Node.js", "Express", "Python", "GraphQL", "REST APIs", "WebSocket"] },
-  { icon: Cloud, title: "DevOps", skills: ["Docker", "AWS", "CI/CD", "Kubernetes", "Nginx", "Linux"] },
-  { icon: Wrench, title: "Tools", skills: ["Git", "Figma", "VS Code", "Postman", "Jira", "MongoDB"] },
+  { icon: Code2, title: "Python & AI", skills: ["Python", "FastAPI", "ComfyUI", "OpenAI API", "AI Automation", "scikit-learn"] },
+  { icon: Server, title: "Backend & Data", skills: ["REST APIs", "GraphQL", "PostgreSQL", "MongoDB", "Redis", "ETL Pipelines"] },
+  { icon: Cloud, title: "DevOps", skills: ["Docker", "AWS", "CI/CD", "Linux", "Nginx", "Vercel"] },
+  { icon: Wrench, title: "Automation & Tools", skills: ["GoHighLevel", "ComfyUI", "AI Automation", "React", "TypeScript", "Figma"] },
 ];
 
 const AboutPage = () => {
@@ -40,16 +41,18 @@ const AboutPage = () => {
           <div className={`transition-all duration-700 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="mb-8 flex justify-center">
               <Avatar className="h-32 w-32 border-2 border-primary animate-float neon-glow-sm">
-                <AvatarImage src={avatarImg} alt="John Craft" />
-                <AvatarFallback>JC</AvatarFallback>
+                <AvatarImage src={avatarImg} alt="Samuel John" />
+                <AvatarFallback className="overflow-hidden bg-card p-0">
+                  <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" />
+                </AvatarFallback>
               </Avatar>
             </div>
             <p className="mb-2 font-mono text-sm tracking-widest text-white uppercase">About Me</p>
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
-              Hi, I'm <span className="gradient-neon-text neon-text">John Craft</span>
+              Hi, I'm <span className="gradient-neon-text neon-text">Samuel John</span>
             </h1>
             <p className="mx-auto mb-10 max-w-2xl text-lg text-white/85">
-              A passionate full-stack developer with 5+ years of experience building high-performance web applications. I specialize in React ecosystems, scalable backend architectures, and cloud-native deployments.
+              Python and AI Developer Building Smart Solutions. I build intelligent applications—from AI-powered mobile products and recipe extraction to scalable Python APIs, machine learning integrations, and production-ready digital experiences.
             </p>
 
             <div className="mb-10 flex flex-wrap justify-center gap-3">
@@ -75,7 +78,7 @@ const AboutPage = () => {
                 <AlertDialogHeader>
                   <AlertDialogTitle className="text-foreground">Download Resume</AlertDialogTitle>
                   <AlertDialogDescription className="text-muted-foreground">
-                    Would you like to download John Craft's resume as a PDF?
+                    Would you like to download Samuel John&apos;s resume as a PDF?
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -104,14 +107,14 @@ const AboutPage = () => {
                 className={`glass rounded-2xl p-6 transition-all duration-500 neon-border-hover hover:shadow-[0_0_30px_hsl(var(--neon)/0.08)] ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: skillsInView ? `${i * 100}ms` : "0ms" }}
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                  <cat.icon className="h-6 w-6 text-primary" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 dark:bg-primary/12">
+                  <cat.icon className="h-6 w-6 text-card-foreground" aria-hidden />
                 </div>
                 <h3 className="mb-4 text-lg font-bold text-card-foreground">{cat.title}</h3>
                 <ul className="space-y-2">
                   {cat.skills.map((skill) => (
                     <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="h-1.5 w-1.5 rounded-full bg-primary/60" />
+                      <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-card-foreground/75" />
                       {skill}
                     </li>
                   ))}
@@ -137,8 +140,8 @@ const AboutPage = () => {
                 style={{ transitionDelay: timelineInView ? `${i * 150}ms` : "0ms" }}
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <Briefcase className="h-4 w-4 text-primary" />
-                  <span className="font-mono text-xs text-primary">{item.year}</span>
+                  <Briefcase className="h-4 w-4 text-card-foreground" />
+                  <span className="font-mono text-xs text-card-foreground">{item.year}</span>
                 </div>
                 <h3 className="text-lg font-bold text-card-foreground">{item.role}</h3>
                 <p className="text-sm text-muted-foreground">{item.company} — {item.desc}</p>

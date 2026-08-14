@@ -38,7 +38,9 @@ const ContactForm = ({ className }: ContactFormProps) => {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all duration-200 focus:border-primary/50 focus:ring-1 focus:ring-primary/30";
+    "card-form-field w-full rounded-xl border px-4 py-3 outline-none transition-all duration-200 focus:border-primary/50 focus:ring-1 focus:ring-primary/30";
+
+  const labelClass = "card-form-label mb-1.5 block text-sm font-medium";
 
   return (
     <div className={cn(className)}>
@@ -55,15 +57,15 @@ const ContactForm = ({ className }: ContactFormProps) => {
       )}
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-foreground">Name</label>
+          <label className={labelClass}>Name</label>
           <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className={inputClass} placeholder="Name" />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-foreground">Email</label>
+          <label className={labelClass}>Email</label>
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} placeholder="Email" />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-foreground">Message</label>
+          <label className={labelClass}>Message</label>
           <textarea
             required
             rows={5}

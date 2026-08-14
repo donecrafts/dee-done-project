@@ -12,7 +12,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Twitter } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 const ContactPage = () => {
@@ -53,19 +53,24 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:njohndeveloper225@gmail.com" className="font-medium text-card-foreground transition-colors hover:text-primary">
-                        njohndeveloper225@gmail.com
+                      <a href="mailto:doneporpor@gmail.com" className="font-medium text-card-foreground transition-colors hover:text-primary">
+                        doneporpor@gmail.com
                       </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-                      <Phone className="h-5 w-5 text-primary" />
+                      <Twitter className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Phone</p>
-                      <a href="tel:+2347062599914" className="font-medium text-card-foreground transition-colors hover:text-primary">
-                        +234 7062599914
+                      <p className="text-sm text-muted-foreground">X Profile</p>
+                      <a
+                        href="https://x.com/donecraft225"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-card-foreground transition-colors hover:text-primary"
+                      >
+                        @donecraft225
                       </a>
                     </div>
                   </div>
@@ -75,7 +80,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium text-card-foreground">Lagos, Nigeria</p>
+                      <p className="font-medium text-card-foreground">Osogbo, Nigeria</p>
                     </div>
                   </div>
                 </div>

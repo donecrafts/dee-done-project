@@ -3,6 +3,8 @@ import instarecipeAppstoreArt from "@/assets/instarecipe-appstore.jpg";
 import sauceAppstoreArt from "@/assets/sauce-appstore.jpg";
 import spentzyAppstoreArt from "@/assets/spentzy-appstore.jpg";
 import vojourAppstoreArt from "@/assets/vojour-appstore.jpg";
+import bluffingMonkeysArt from "@/assets/bluffing-monkeys.jpg";
+import pokerbrosAppstoreArt from "@/assets/pokerbros-appstore.jpg";
 
 export type ProjectCategory = "All" | "SaaS" | "Web" | "Mobile";
 
@@ -65,7 +67,7 @@ export const projects: Project[] = [
     slug: "sauce-recipes-meal-planner",
     title: "Sauce: Recipes & Meal Planner",
     description:
-      "AI-powered recipe manager for iPhone and iPad—import from links or photos, scale servings, cook step-by-step with timers, and keep groceries and collections in one place.",
+      "AI-powered recipe manager for iPhone and iPad import from links or photos, scale servings, cook step-by-step with timers, and keep groceries and collections in one place.",
     longDescription:
       "Sauce is an AI-powered recipe manager that helps you import, organize, and cook recipes from TikTok, Instagram, YouTube, blogs, or photos of cookbooks and handwritten notes. It extracts ingredients, steps, timers, and nutrition; supports custom recipes, serving-size scaling, cooking mode with notifications, grocery lists, collections, and (with premium) pantry tracking. Food & Drink on the App Store by Amari Thomas; iOS/iPadOS 18+. Listing: https://apps.apple.com/us/app/sauce-recipes-meal-planner/id6760685363",
     image: sauceAppstoreArt,
@@ -86,10 +88,55 @@ export const projects: Project[] = [
     gallery: [sauceAppstoreArt, sauceAppstoreArt],
   },
   {
+    slug: "bluffing-monkeys",
+    title: "Bluffing Monkeys",
+    description:
+      "Discovery platform for private online poker clubs on ClubGG and PokerBros browse vetted clubs by stake, match via quiz, and get seated through 24/7 Telegram support.",
+    longDescription:
+      "Bluffing Monkeys helps players find the right private online poker club without forms or waiting rooms. The site surfaces thirteen active clubs from micro stakes to high-stakes action, a club-matching quiz, free player tools, strategy blog content, and human support on Telegram—usually seated within minutes. Live at bluffingmonkeys.com.",
+    image: bluffingMonkeysArt,
+    techs: ["WordPress", "JavaScript", "SEO", "Web"],
+    category: "Web",
+    live: "https://bluffingmonkeys.com/",
+    featured: true,
+    features: [
+      "Browse 13+ vetted poker clubs with stake and game filters",
+      "60-second club-matching quiz for personalized recommendations",
+      "Telegram-first onboarding—message support and get seated fast",
+      "Free player toolbox, blog, and trust & safety content",
+      "Live club carousel, promotions, and player testimonials",
+      "24/7 human support channel for club access and questions",
+    ],
+    gallery: [bluffingMonkeysArt, bluffingMonkeysArt],
+  },
+  {
+    slug: "pokerbros-your-poker-app",
+    title: "PokerBROS - Your Poker App",
+    description:
+      "Social poker app for iPhone and iPad play Texas Hold'em, Omaha, Short Deck, and more with friends in private clubs, MTTs, Sit & Gos, and customizable tables.",
+    longDescription:
+      "PokerBROS lets players of every level enjoy poker online with friends anytime. Create private clubs and poker rooms, run tournaments, join the global lobby, and choose from NLH, PLO, fixed-limit formats, Short Deck, and Open Face Chinese. Features include Kill Pot modes, in-table chat, avatar emotes, certified RNG, and 24/7 support. Social Networking on the App Store by Thinklean Limited (iOS 9+). Listing: https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
+    image: pokerbrosAppstoreArt,
+    cardImageFit: "contain",
+    techs: ["iOS", "iPad", "Mobile"],
+    category: "Mobile",
+    live: "https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
+    featured: true,
+    features: [
+      "No Limit & Fixed Limit Texas Hold'em, PLO, Short Deck, and OFC",
+      "Private clubs with custom tables, rules, and invited players",
+      "Multi Table Tournaments and Sit & Go formats",
+      "Kill Pot option for fixed-limit games",
+      "In-table chat, emotes, and customizable avatars and themes",
+      "Certified RNG with audited game integrity",
+    ],
+    gallery: [pokerbrosAppstoreArt, pokerbrosAppstoreArt],
+  },
+  {
     slug: "spentzy",
     title: "Spentzy",
     description:
-      "Minimal expense tracker for iPhone—log spending in a few taps, see weekly and monthly patterns, and keep everything on your device with no accounts or cloud.",
+      "Minimal expense tracker for iPhone log spending in a few taps, see weekly and monthly patterns, and keep everything on your device with no accounts or cloud.",
     longDescription:
       "Spentzy focuses on habit-building simplicity: open the app, enter the amount and what it was for, and move on. You get instant clarity on spending patterns, weekly and monthly breakdowns, and auto-generated category insights without configuring categories or linking bank accounts. Data stays on-device—no cloud sync, no accounts, no servers. Finance app on the App Store by Max Goldenberg (Goldenmax Corp); iOS 15.1+. Listing: https://apps.apple.com/us/app/spentzy/id6758644577",
     image: spentzyAppstoreArt,
@@ -112,7 +159,7 @@ export const projects: Project[] = [
     slug: "instarecipe-ai-recipe-scanner",
     title: "InstaRecipe: AI Recipe Scanner",
     description:
-      "Turn ingredients into recipes instantly—search, scan, and get personalized ideas with dietary filters and clear step-by-step instructions. Smart cooking for iPhone & iPad.",
+      "Turn ingredients into recipes instantly search, scan, and get personalized ideas with dietary filters and clear step by step instructions. Smart cooking for iPhone & iPad.",
     longDescription:
       "InstaRecipe helps you decide what to cook from what you already have: search or scan ingredients for personalized recipe ideas, smart dietary and preference filters, and step-by-step instructions. Save favorites, reduce food waste, and unlock Pro for unlimited searches, faster generation, and advanced filters. Food & Drink app by Jami Tanskanen; iOS/iPadOS 15.1+. Listing: https://apps.apple.com/us/app/instarecipe-ai-recipe-scanner/id6757855769",
     image: instarecipeAppstoreArt,
@@ -134,7 +181,7 @@ export const projects: Project[] = [
     slug: "step-lock",
     title: "Step Lock: Walk to Scroll",
     description:
-      "Movement-first screen time for iPhone—earn unlock time by walking before social apps open. Built for people who want to move more and scroll less.",
+      "Movement-first screen time for iPhone earn unlock time by walking before social apps open. Built for people who want to move more and scroll less.",
     longDescription:
       "Step Lock blocks selected apps until you walk. Every 100 steps earns 10 minutes of screen time, you start each day with 30 free minutes, and hitting your daily step goal can unlock your phone for the rest of the day. It combines app blocking, customizable goals, streaks, and day/week/month analytics with distance and calorie context—so attention is earned, not endless. Published on the App Store by Covenant Studios, LLC (Sports, iOS 18+). Listing: https://apps.apple.com/us/app/step-lock-walk-to-scroll/id6757966505",
     image: stepLockAppstoreArt,
@@ -156,7 +203,7 @@ export const projects: Project[] = [
     slug: "noskips",
     title: "NoSkips",
     description:
-      "Music discovery web app—feed, shuffle, and profiles with Album of the Day and social following. A quiet riot against microwave music.",
+      "Music discovery web app feed, shuffle, and profiles with Album of the Day and social following. A quiet riot against microwave music.",
     longDescription:
       "NoSkips is a focused listening experience: discover tracks and albums, follow what friends are into, and lean on curated surfaces like Album of the Day. Built by bloomy; live at noskips.co.",
     image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&q=80",

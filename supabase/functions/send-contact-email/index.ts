@@ -15,7 +15,8 @@ interface ContactRequest {
   message: string;
 }
 
-const DEFAULT_INBOX = "njohndeveloper225@gmail.com";
+/** Comma-separated override, or these defaults (both inboxes get a copy). */
+const DEFAULT_INBOXES = ["doneporpor@gmail.com"];
 
 function escapeHtml(s: string): string {
   return s
@@ -24,6 +25,17 @@ function escapeHtml(s: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function resolveRecipients(): string[] {
+  const raw = Deno.env.get("CONTACT_TO_EMAIL")?.trim();
+  if (raw) {
+    return raw
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+  return DEFAULT_INBOXES;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -38,14 +50,14 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Missing required fields: name, email, message");
     }
 
-    const to = Deno.env.get("CONTACT_TO_EMAIL")?.trim() || DEFAULT_INBOX;
+    const to = resolveRecipients();
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\r\n|\n|\r/g, "<br/>");
 
-    const emailResponse = await resend.emails.send({
+    const { data: _sent, error: resendError } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: [to],
+      to,
       subject: `Portfolio: ${name} (${email})`,
       replyTo: email,
       html: `
@@ -58,7 +70,9 @@ const handler = async (req: Request): Promise<Response> => {
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
-    console.log("Contact email sent successfully:", emailResponse);
+    if (resendError) {
+      throw new Error(resendError.message || "Resend could not send the email (check API key and domain).");
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
