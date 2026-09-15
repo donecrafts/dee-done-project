@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { Github, Twitter, Mail, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BRAND_NAME } from "@/config/brand";
+import { FOOTER_BLURB } from "@/config/brand-copy";
 
 function WhatsAppIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
@@ -61,7 +62,7 @@ const Footer = () => {
               <span className={cn(isDark ? "text-white" : "text-black")}>{BRAND_NAME}</span>
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Python and AI Developer Building Smart Solutions—shipping AI-powered apps, intelligent APIs, and data-driven products from idea to production.
+              {FOOTER_BLURB}
             </p>
           </div>
 
@@ -98,7 +99,7 @@ const Footer = () => {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-center text-sm text-muted-foreground sm:text-left">
-            © 2020 Samuel John. Built with React & Tailwind.
+            © 2020 {BRAND_NAME}. Built with React & Tailwind.
           </p>
           <button
             type="button"

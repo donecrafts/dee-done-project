@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
 import { featuredTestimonials, clientReviews } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
+import { TESTIMONIALS_INTRO } from "@/config/brand-copy";
 
 const Stars = () => (
   <div className="flex gap-0.5 text-amber-400" aria-hidden>
@@ -64,7 +65,7 @@ const TestimonialsSection = () => {
             <span className="text-gradient-spectrum inline-block">Testimonials</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            What clients say about working with me on their most important projects.
+            {TESTIMONIALS_INTRO}
           </p>
         </div>
 

@@ -8,8 +8,9 @@ import {
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Code2, Server, Cloud, Wrench, Download, Briefcase } from "lucide-react";
-import aboutPortrait from "@/assets/about-portrait.png";
-import { BRAND_LOGO } from "@/config/brand";
+import aboutPortrait from "@/assets/about-portrait.jpg";
+import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
+import { ABOUT_BIO } from "@/config/brand-copy";
 
 const techs = ["Python", "FastAPI", "ComfyUI", "AI Automation", "GoHighLevel", "React", "PostgreSQL", "Docker", "AWS", "OpenAI API", "Tailwind CSS"];
 
@@ -49,7 +50,7 @@ const AboutPage = () => {
                   aria-hidden
                 />
                 <Avatar className="relative h-32 w-32 border border-white/30 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] ring-2 ring-white/15">
-                  <AvatarImage src={aboutPortrait} alt="Samuel John" className="object-cover object-[center_18%]" />
+                  <AvatarImage src={aboutPortrait} alt={BRAND_NAME} className="object-cover object-[center_22%]" />
                   <AvatarFallback className="overflow-hidden bg-card p-0">
                     <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" />
                   </AvatarFallback>
@@ -58,11 +59,13 @@ const AboutPage = () => {
             </div>
             <p className="mb-2 font-mono text-sm tracking-widest text-white uppercase">About Me</p>
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
-              Hi, I'm <span className="gradient-neon-text neon-text">Samuel John</span>
+              <span className="gradient-neon-text neon-text">{BRAND_NAME}</span>
             </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-lg text-white/85">
-              Python and AI Developer Building Smart Solutions. I build intelligent applications—from AI-powered mobile products and recipe extraction to scalable Python APIs, machine learning integrations, and production-ready digital experiences.
-            </p>
+            <div className="mx-auto mb-10 max-w-2xl space-y-4 text-left text-base text-white/85 md:text-lg">
+              {ABOUT_BIO.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+              ))}
+            </div>
 
             <div className="mb-10 flex flex-wrap justify-center gap-3">
               {techs.map((tech, i) => (
@@ -87,7 +90,7 @@ const AboutPage = () => {
                 <AlertDialogHeader>
                   <AlertDialogTitle className="text-foreground">Download Resume</AlertDialogTitle>
                   <AlertDialogDescription className="text-muted-foreground">
-                    Would you like to download Samuel John&apos;s resume as a PDF?
+                    Would you like to download {BRAND_NAME}&apos;s resume as a PDF?
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

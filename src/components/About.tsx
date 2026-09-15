@@ -1,5 +1,6 @@
 import { useInView } from "@/hooks/use-in-view";
 import { Badge } from "@/components/ui/badge";
+import { ABOUT_BIO } from "@/config/brand-copy";
 
 const techs = [
   "React", "Next.js", "TypeScript", "Node.js", "Python", "MongoDB",
@@ -19,11 +20,13 @@ const About = () => {
         >
           <p className="mb-2 font-mono text-sm tracking-widest text-foreground uppercase">About Me</p>
           <h2 className="mb-6 text-4xl font-bold text-foreground">
-            Crafting Digital <span className="gradient-neon-text">Experiences</span>
+            About <span className="gradient-neon-text">Me</span>
           </h2>
-          <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-            I&apos;m Samuel John, a Python and AI developer building smart solutions—from intelligent APIs and machine learning integrations to polished web and mobile products that solve real problems.
-          </p>
+          <div className="mb-10 space-y-4 text-left text-lg leading-relaxed text-muted-foreground sm:text-center">
+            {ABOUT_BIO.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="flex flex-wrap justify-center gap-3">
             {techs.map((tech, i) => (

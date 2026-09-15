@@ -107,11 +107,11 @@ export function processVoiceQuery(raw: string): VoiceAction {
     };
   }
 
-  if (matchesAny(q, [/who are you|who is samuel|about you|about samuel|introduce|your name/i])) {
+  if (matchesAny(q, [/who are you|who is samuel|who is done|about you|about samuel|about done craft|introduce|your name/i])) {
     return {
       type: "scroll",
       sectionId: "about",
-      message: `I'm ${BRAND_NAME}, a Python and AI developer building smart solutions—from ComfyUI workflows and Wan 2.2 LoRA training to mobile apps and production web platforms. I'm based in Osogbo, Nigeria.`,
+      message: `I'm ${BRAND_NAME}, a Python and AI developer focused on building smart apps that solve real problems. I build AI-powered mobile apps, web platforms, and custom software. My goal is simple: build useful technology that works well and helps people. I'm based in Osogbo, Nigeria.`,
     };
   }
 
@@ -213,6 +213,8 @@ export function processVoiceQuery(raw: string): VoiceAction {
   };
 }
 
+import { pickMaleEnglishVoice } from "@/lib/welcome-voice";
+
 export function speakText(text: string, onEnd?: () => void): void {
   if (typeof window === "undefined" || !window.speechSynthesis) {
     onEnd?.();
@@ -220,8 +222,17 @@ export function speakText(text: string, onEnd?: () => void): void {
   }
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.95;
-  utterance.pitch = 1;
+  utterance.rate = 0.9;
+  utterance.pitch = 0.82;
+  utterance.volume = 1;
+  const voice = pickMaleEnglishVoice();
+  if (voice) {
+    utterance.voice = voice;
+    utterance.lang = voice.lang || "en-US";
+  } else {
+    utterance.lang = "en-US";
+    utterance.pitch = 0.75;
+  }
   utterance.onend = () => onEnd?.();
   utterance.onerror = () => onEnd?.();
   window.speechSynthesis.speak(utterance);

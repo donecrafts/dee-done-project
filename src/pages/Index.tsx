@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowRight } from "lucide-react";
 import { projects, projectCardImageClass, projectCardMediaBackdropClass, projectLiveRibbon } from "@/data/projects";
+import { PROJECTS_INTRO } from "@/config/brand-copy";
 
 const FeaturedProjects = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);
@@ -23,7 +24,7 @@ const FeaturedProjects = () => {
             <span className="text-gradient-spectrum inline-block">Projects</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            A selection of projects that showcase my technical range and passion for building great products.
+            {PROJECTS_INTRO}
             <span className="mt-1 block text-sm">Ask by voice for any project — tap the mic button on the right.</span>
           </p>
         </div>

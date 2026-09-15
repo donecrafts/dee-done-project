@@ -16,6 +16,7 @@ import {
   projectLiveRibbon,
   type ProjectCategory,
 } from "@/data/projects";
+import { PROJECTS_INTRO } from "@/config/brand-copy";
 
 const ProjectsPage = () => {
   const [heroRef, heroInView] = useInView<HTMLElement>(0.1);
@@ -36,7 +37,7 @@ const ProjectsPage = () => {
               My <span className="gradient-neon-text neon-text">Projects</span>
             </h1>
             <p className="mx-auto max-w-xl text-lg text-white/85">
-              A collection of applications I&apos;ve built across various domains and technologies.
+              {PROJECTS_INTRO}
             </p>
             <p className="mx-auto mt-3 max-w-lg text-sm text-white/70">Ask by voice for any project — use the mic button on the right.</p>
           </div>

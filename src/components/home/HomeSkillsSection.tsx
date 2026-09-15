@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/use-in-view";
 import { homeSkillCards } from "@/data/homeSkills";
 import { Brain, Bot, Server, Database, Smartphone, Cloud, Workflow, Megaphone } from "lucide-react";
+import { SKILLS_INTRO, toBrandScript } from "@/config/brand-copy";
 
 const icons = [Brain, Bot, Server, Workflow, Megaphone, Database, Smartphone, Cloud] as const;
 
@@ -16,7 +17,7 @@ const HomeSkillsSection = () => {
             <span className="text-gradient-spectrum inline-block">Skills</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Python, AI, ComfyUI, GoHighLevel, and full product engineering—built through real projects, intelligent automation, and production deployments.
+            {SKILLS_INTRO}
           </p>
         </div>
 
@@ -40,8 +41,8 @@ const HomeSkillsSection = () => {
                   <div className="skill-icon-badge mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
                     <Icon className="h-5 w-5" aria-hidden />
                   </div>
-                  <h3 className="mb-1.5 text-lg font-bold text-foreground">{card.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{card.description}</p>
+                  <h3 className="mb-1.5 text-lg font-bold text-foreground">{toBrandScript(card.title)}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{toBrandScript(card.description)}</p>
                   {card.tags && card.tags.length > 0 && (
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {card.tags.map((tag) => (

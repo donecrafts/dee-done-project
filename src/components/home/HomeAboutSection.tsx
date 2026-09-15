@@ -1,7 +1,7 @@
 import { useInView } from "@/hooks/use-in-view";
-import { Sparkles, Heart } from "lucide-react";
-import aboutPortrait from "@/assets/about-portrait.png";
-import { BRAND_LOGO } from "@/config/brand";
+import aboutPortrait from "@/assets/about-portrait.jpg";
+import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
+import { ABOUT_BIO, ROLE_LINE } from "@/config/brand-copy";
 
 const HomeAboutSection = () => {
   const [ref, inView] = useInView<HTMLElement>(0.12);
@@ -34,8 +34,8 @@ const HomeAboutSection = () => {
                   <div className="relative aspect-[4/5] overflow-hidden bg-[#f3efe9]">
                     <img
                       src={aboutPortrait}
-                      alt="Samuel John"
-                      className="h-full w-full object-cover object-[center_18%] scale-[1.02]"
+                      alt={BRAND_NAME}
+                      className="h-full w-full object-cover object-center scale-[1.02]"
                       loading="lazy"
                     />
                     <div
@@ -53,8 +53,8 @@ const HomeAboutSection = () => {
                         <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
                       </div>
                       <div className="min-w-0 pb-0.5">
-                        <p className="text-lg font-semibold tracking-tight text-white">Samuel John</p>
-                        <p className="text-sm text-white/80">Python and AI Developer</p>
+                        <p className="text-lg font-semibold tracking-tight text-white">{BRAND_NAME}</p>
+                        <p className="text-sm text-white/80">{ROLE_LINE}</p>
                       </div>
                     </div>
                   </figcaption>
@@ -63,34 +63,12 @@ const HomeAboutSection = () => {
             </div>
           </div>
 
-          <div className={`space-y-6 transition-all duration-700 delay-100 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I&apos;m Samuel John, a Python and AI developer focused on building intelligent applications that solve real problems. From AI-powered mobile products like Sauce to production web platforms, I combine Python backends, machine learning, and clean engineering to deliver smart solutions.
-            </p>
-            <p className="leading-relaxed text-muted-foreground">
-              I work across the stack—designing APIs, integrating AI models, and shipping polished apps that turn complex ideas into reliable, user-ready products.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
-                  <Heart className="h-5 w-5" aria-hidden />
-                </div>
-                <h3 className="mb-2 font-semibold text-card-foreground">My mission</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Build AI-powered applications that solve real problems with Python, thoughtful architecture, and production-grade code.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-card-foreground dark:bg-primary/12 dark:text-primary">
-                  <Sparkles className="h-5 w-5" aria-hidden />
-                </div>
-                <h3 className="mb-2 font-semibold text-card-foreground">My vision</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  To create intelligent, scalable digital products that harness AI to make everyday experiences smarter and more impactful.
-                </p>
-              </div>
-            </div>
+          <div className={`space-y-5 transition-all duration-700 delay-100 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            {ABOUT_BIO.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)} className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </div>

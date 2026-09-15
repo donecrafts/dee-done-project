@@ -11,6 +11,7 @@ import {
   speakText,
   speechRecognitionErrorMessage,
 } from "@/lib/voice-portfolio-agent";
+import { BRAND_NAME } from "@/config/brand";
 
 type VoiceStatus = "idle" | "listening" | "processing" | "writing" | "speaking" | "unsupported" | "error";
 type InputMode = "voice" | "text";
@@ -264,7 +265,7 @@ const AskByVoice = () => {
           <div className="mb-3 flex items-start justify-between gap-3">
             <div className="flex items-center gap-2">
               <Volume2 className="h-4 w-4 text-primary" aria-hidden />
-              <p className="text-sm font-semibold text-foreground">Samuel AI</p>
+              <p className="text-sm font-semibold text-foreground">{BRAND_NAME} AI</p>
             </div>
             <button
               type="button"
@@ -315,7 +316,7 @@ const AskByVoice = () => {
                 </>
               ) : (
                 <>
-                  <span className="font-medium text-muted-foreground">Samuel: </span>
+                  <span className="font-medium text-muted-foreground">{BRAND_NAME}: </span>
                   {reply}
                   {status === "writing" ? <span className="animate-pulse">▍</span> : null}
                 </>

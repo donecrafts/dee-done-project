@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/use-in-view";
 import { Mail, MapPin, Twitter } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { CONTACT_INTRO } from "@/config/brand-copy";
 
 const iconBoxClass =
   "card-icon-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-xl";
@@ -20,16 +21,13 @@ const HomeContactTeaser = () => {
             <span className="text-gradient-spectrum inline-block">Together</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something amazing together.
+            {CONTACT_INTRO}
           </p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div className={`space-y-4 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <h3 className="text-lg font-semibold text-foreground">Get in touch</h3>
-            <p className="leading-relaxed text-muted-foreground">
-              Whether you have a project idea, want to collaborate, or just want to say hello—my inbox is always open.
-            </p>
 
             <a href="mailto:doneporpor@gmail.com" className="block">
               <div className={cardClass}>

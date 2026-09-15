@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Volume2 } from "lucide-react";
 import welcomePortrait from "@/assets/welcome-portrait.jpg";
 import welcomePortraitBack from "@/assets/welcome-portrait-back.jpg";
-import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
+import { BRAND_LOGO } from "@/config/brand";
+import { WELCOME_HEADLINE, WELCOME_SUBLINE } from "@/config/brand-copy";
 import { projects } from "@/data/projects";
+import { ProjectPhoneCard } from "@/components/ProjectPhoneCard";
 import { startWelcomeWebGL } from "@/lib/welcome-webgl";
 import { preloadWelcomeVoices, speakWelcome, WELCOME_STORAGE_KEY } from "@/lib/welcome-voice";
 
@@ -89,33 +91,23 @@ const WelcomeScreen = () => {
           {/* Soft brand wash — same structure as gratitudedev hero */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/15 via-[#141416] to-primary/10" />
 
-          {/* Top scrolling project strip */}
+          {/* Top scrolling phones */}
           {!reducedMotion && (
-            <div className="pointer-events-none absolute left-0 right-0 top-16 overflow-hidden opacity-30" aria-hidden>
+            <div className="pointer-events-none absolute left-0 right-0 top-12 overflow-hidden opacity-40" aria-hidden>
               <div className="flex w-max animate-scroll-left">
                 {marqueeItems.map((item, i) => (
-                  <div
-                    key={`top-${item.title}-${i}`}
-                    className="mx-4 h-72 w-40 flex-shrink-0 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <img src={item.image} alt="" className="h-full w-full object-cover" />
-                  </div>
+                  <ProjectPhoneCard key={`top-${item.title}-${i}`} image={item.image} title={item.title} />
                 ))}
               </div>
             </div>
           )}
 
-          {/* Bottom scrolling project strip */}
+          {/* Bottom scrolling phones */}
           {!reducedMotion && (
-            <div className="pointer-events-none absolute bottom-16 left-0 right-0 overflow-hidden opacity-30" aria-hidden>
+            <div className="pointer-events-none absolute bottom-12 left-0 right-0 overflow-hidden opacity-40" aria-hidden>
               <div className="flex w-max animate-scroll-right">
                 {marqueeReverse.map((item, i) => (
-                  <div
-                    key={`bottom-${item.title}-${i}`}
-                    className="mx-4 h-72 w-40 flex-shrink-0 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <img src={item.image} alt="" className="h-full w-full object-cover" />
-                  </div>
+                  <ProjectPhoneCard key={`bottom-${item.title}-${i}`} image={item.image} title={item.title} />
                 ))}
               </div>
             </div>
@@ -147,14 +139,21 @@ const WelcomeScreen = () => {
             </div>
 
             <h1
-              className="mb-4 animate-slide-up text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl"
+              className="mb-4 animate-slide-up text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl"
               style={{ animationDelay: "0.16s", fontFamily: "var(--font-heading)" }}
             >
-              {BRAND_NAME}
+              {WELCOME_HEADLINE}
             </h1>
 
+            <p
+              className="mx-auto mb-6 max-w-md animate-slide-up text-sm leading-relaxed text-white/75 sm:text-base"
+              style={{ animationDelay: "0.18s" }}
+            >
+              {WELCOME_SUBLINE}
+            </p>
+
             <div
-              className="mx-auto mb-6 flex w-44 items-center gap-2.5 animate-slide-up"
+              className="mx-auto mb-8 flex w-44 items-center gap-2.5 animate-slide-up"
               style={{ animationDelay: "0.2s" }}
               aria-hidden
             >
@@ -163,16 +162,9 @@ const WelcomeScreen = () => {
               <span className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-400/70" />
             </div>
 
-            <p
-              className="mb-8 max-w-xl animate-slide-up text-lg leading-relaxed text-white/70 sm:text-xl"
-              style={{ animationDelay: "0.24s" }}
-            >
-              Python and AI developer who ships real products — smart apps, ComfyUI workflows, and freelance builds people actually use.
-            </p>
-
             <div
               className="flex animate-slide-up flex-col items-center justify-center gap-3 sm:flex-row"
-              style={{ animationDelay: "0.3s" }}
+              style={{ animationDelay: "0.28s" }}
             >
               <button
                 type="button"

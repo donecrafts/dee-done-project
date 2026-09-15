@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Mail, MapPin, Twitter, Github } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { CONTACT_INTRO } from "@/config/brand-copy";
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView<HTMLElement>(0.1);
@@ -29,7 +30,7 @@ const ContactPage = () => {
             <h1 className="mb-4 text-5xl font-bold text-white md:text-6xl">
               Let&apos;s <span className="gradient-neon-text neon-text">Connect</span>
             </h1>
-            <p className="mx-auto max-w-xl text-lg text-white/85">Have a project in mind? Let&apos;s build something amazing together.</p>
+            <p className="mx-auto max-w-xl text-lg text-white/85">{CONTACT_INTRO}</p>
           </div>
         </div>
       </section>
