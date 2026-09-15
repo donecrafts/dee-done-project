@@ -50,7 +50,7 @@ const HomeAboutSection = () => {
                   <figcaption className="absolute inset-x-0 bottom-0 p-6">
                     <div className="flex items-end gap-3">
                       <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/25 bg-white/10 shadow-md backdrop-blur-sm">
-                        <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
+                        <img src={BRAND_LOGO} alt="" className="h-full w-full object-contain" aria-hidden />
                       </div>
                       <div className="min-w-0 pb-0.5">
                         <p className="text-lg font-semibold tracking-tight text-white">{BRAND_NAME}</p>

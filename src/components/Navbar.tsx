@@ -92,7 +92,7 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
                 !isLight && scrolled && "bg-card",
               )}
             >
-              <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
+              <img src={BRAND_LOGO} alt="" className="h-full w-full object-contain" aria-hidden />
             </div>
           </div>
           <span

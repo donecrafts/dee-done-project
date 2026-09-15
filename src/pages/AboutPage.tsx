@@ -52,7 +52,7 @@ const AboutPage = () => {
                 <Avatar className="relative h-32 w-32 border border-white/30 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] ring-2 ring-white/15">
                   <AvatarImage src={aboutPortrait} alt={BRAND_NAME} className="object-cover object-[center_22%]" />
                   <AvatarFallback className="overflow-hidden bg-card p-0">
-                    <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" />
+                    <img src={BRAND_LOGO} alt="" className="h-full w-full object-contain" />
                   </AvatarFallback>
                 </Avatar>
               </div>
