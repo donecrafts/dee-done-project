@@ -20,6 +20,13 @@ export const homeSkillCards: HomeSkillCard[] = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80",
   },
   {
+    title: "ComfyUI & AI Automation",
+    description:
+      "Designing node-based ComfyUI workflows for AI image generation, batch processing, and automated creative pipelines that scale from prototype to production.",
+    tags: ["ComfyUI", "AI Automation", "Workflows"],
+    image: comfyuiSkillArt,
+  },
+  {
     title: "Machine Learning Integration",
     description:
       "Embedding ML models and AI workflows into real products—from recipe extraction to automation and decision support.",
@@ -31,13 +38,6 @@ export const homeSkillCards: HomeSkillCard[] = [
     description:
       "Designing scalable REST and GraphQL APIs, microservices, and data pipelines that connect apps, users, and AI services.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80",
-  },
-  {
-    title: "ComfyUI & AI Automation",
-    description:
-      "Designing node-based ComfyUI workflows for AI image generation, batch processing, and automated creative pipelines that scale from prototype to production.",
-    tags: ["ComfyUI", "AI Automation", "Workflows"],
-    image: comfyuiSkillArt,
   },
   {
     title: "GoHighLevel",

@@ -24,6 +24,7 @@ const FeaturedProjects = () => {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             A selection of projects that showcase my technical range and passion for building great products.
+            <span className="mt-1 block text-sm">Ask by voice for any project — tap the mic button on the right.</span>
           </p>
         </div>
 

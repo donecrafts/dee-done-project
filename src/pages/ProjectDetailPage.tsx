@@ -8,7 +8,7 @@ import {
   Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ExternalLink, Github, ArrowLeft, CheckCircle } from "lucide-react";
-import { projects, projectLiveLinkLabel, projectDetailPreviewWrapClass, projectDetailPreviewImgClass } from "@/data/projects";
+import { projects, projectLiveLinkLabel, projectGithubLink, projectDetailPreviewWrapClass, projectDetailPreviewImgClass } from "@/data/projects";
 
 const ProjectDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,6 +27,8 @@ const ProjectDetailPage = () => {
       </Layout>
     );
   }
+
+  const githubLink = projectGithubLink(project);
 
   return (
     <Layout>
@@ -70,9 +72,9 @@ const ProjectDetailPage = () => {
             >
               <ExternalLink className="h-4 w-4" /> {projectLiveLinkLabel(project.live)}
             </a>
-            {project.github ? (
+            {githubLink ? (
               <a
-                href={project.github}
+                href={githubLink}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]"
@@ -132,7 +134,7 @@ const ProjectDetailPage = () => {
                 <ul className="space-y-3">
                   {project.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <CheckCircle className="h-4 w-4 mt-0.5 text-primary shrink-0" />
+                      <CheckCircle className="h-4 w-4 mt-0.5 shrink-0 text-card-foreground dark:text-primary" />
                       {feature}
                     </li>
                   ))}

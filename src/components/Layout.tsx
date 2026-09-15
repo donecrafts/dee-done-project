@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CursorGlow from "@/components/CursorGlow";
-import BackToTop from "@/components/BackToTop";
+import AskByVoice from "@/components/AskByVoice";
 import AmbientPageBackground from "@/components/AmbientPageBackground";
 
 interface LayoutProps {
@@ -38,7 +38,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar theme={activeTheme} onToggleTheme={toggleTheme} />
       <main className="relative z-10">{children}</main>
       <Footer />
-      <BackToTop />
+      <AskByVoice />
     </div>
   );
 };

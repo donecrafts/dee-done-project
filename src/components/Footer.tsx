@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { Github, Twitter, Mail, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BRAND_NAME } from "@/config/brand";
 
 function WhatsAppIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
@@ -57,7 +58,7 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-3 md:gap-8">
           <div>
             <Link to="/" className="mb-4 inline-block text-xl font-bold tracking-tight">
-              <span className="text-gradient-spectrum">Samuel John</span>
+              <span className={cn(isDark ? "text-white" : "text-black")}>{BRAND_NAME}</span>
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               Python and AI Developer Building Smart Solutions—shipping AI-powered apps, intelligent APIs, and data-driven products from idea to production.

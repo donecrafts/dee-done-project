@@ -12,7 +12,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Mail, MapPin, Twitter } from "lucide-react";
+import { Mail, MapPin, Twitter, Github } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 const ContactPage = () => {
@@ -71,6 +71,22 @@ const ContactPage = () => {
                         className="font-medium text-card-foreground transition-colors hover:text-primary"
                       >
                         @donecraft225
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="card-icon-badge flex h-10 w-10 items-center justify-center rounded-xl">
+                      <Github className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">GitHub</p>
+                      <a
+                        href="https://github.com/donecrafts"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-card-foreground transition-colors hover:text-primary"
+                      >
+                        github.com/donecrafts
                       </a>
                     </div>
                   </div>

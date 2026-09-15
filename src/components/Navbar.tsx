@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
-import { BRAND_LOGO } from "@/config/brand";
+import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
 
 interface NavbarProps {
   theme: "dark" | "light";
@@ -95,7 +95,16 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
               <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
             </div>
           </div>
-          <span className="text-gradient-spectrum hidden text-lg tracking-tight sm:inline md:text-xl">Samuel John</span>
+          <span
+            className={cn(
+              "hidden text-lg font-bold tracking-tight sm:inline md:text-xl",
+              isLight && "text-black",
+              !isLight && !scrolled && "text-white",
+              !isLight && scrolled && "text-card-foreground",
+            )}
+          >
+            {BRAND_NAME}
+          </span>
         </Link>
 
         <div className="hidden items-center justify-center gap-5 lg:flex xl:gap-7">

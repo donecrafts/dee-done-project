@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/use-in-view";
 import { Sparkles, Heart } from "lucide-react";
-import avatarImg from "@/assets/avatar.png";
+import aboutPortrait from "@/assets/about-portrait.png";
 import { BRAND_LOGO } from "@/config/brand";
 
 const HomeAboutSection = () => {
@@ -18,16 +18,47 @@ const HomeAboutSection = () => {
           </h2>
         </div>
 
-        <div className="grid items-start gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-              <img src={avatarImg} alt="Samuel John" className="aspect-[4/5] w-full object-cover" loading="lazy" />
-              <div className="absolute bottom-0 left-0 right-0 border-t border-border/60 bg-card/95 p-5 backdrop-blur-sm">
-                <div className="mb-3 h-12 w-12 overflow-hidden rounded-full border border-border/40 bg-card shadow-sm">
-                  <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
-                </div>
-                <p className="text-lg font-bold text-card-foreground">Samuel John</p>
-                <p className="text-sm font-medium text-card-foreground dark:text-primary">Python and AI Developer Building Smart Solutions</p>
+            <div className="mx-auto max-w-md lg:mx-0">
+              <div className="relative">
+                <div
+                  className="pointer-events-none absolute -inset-3 rounded-[2rem] opacity-70 blur-2xl"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 50% 30%, hsl(345 70% 45% / 0.28), transparent 65%)",
+                  }}
+                  aria-hidden
+                />
+                <figure className="relative overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-[0_24px_60px_-28px_hsl(345_40%_20%/0.45)]">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#f3efe9]">
+                    <img
+                      src={aboutPortrait}
+                      alt="Samuel John"
+                      className="h-full w-full object-cover object-[center_18%] scale-[1.02]"
+                      loading="lazy"
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, transparent 58%, hsl(350 40% 12% / 0.55) 100%)",
+                      }}
+                      aria-hidden
+                    />
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                    <div className="flex items-end gap-3">
+                      <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/25 bg-white/10 shadow-md backdrop-blur-sm">
+                        <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" aria-hidden />
+                      </div>
+                      <div className="min-w-0 pb-0.5">
+                        <p className="text-lg font-semibold tracking-tight text-white">Samuel John</p>
+                        <p className="text-sm text-white/80">Python and AI Developer</p>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>

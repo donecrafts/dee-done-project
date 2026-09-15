@@ -8,7 +8,7 @@ import {
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Code2, Server, Cloud, Wrench, Download, Briefcase } from "lucide-react";
-import avatarImg from "@/assets/avatar.png";
+import aboutPortrait from "@/assets/about-portrait.png";
 import { BRAND_LOGO } from "@/config/brand";
 
 const techs = ["Python", "FastAPI", "ComfyUI", "AI Automation", "GoHighLevel", "React", "PostgreSQL", "Docker", "AWS", "OpenAI API", "Tailwind CSS"];
@@ -40,12 +40,21 @@ const AboutPage = () => {
         <div className="relative z-10 container mx-auto px-6 py-32 text-center">
           <div className={`transition-all duration-700 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="mb-8 flex justify-center">
-              <Avatar className="h-32 w-32 border-2 border-primary animate-float neon-glow-sm">
-                <AvatarImage src={avatarImg} alt="Samuel John" />
-                <AvatarFallback className="overflow-hidden bg-card p-0">
-                  <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" />
-                </AvatarFallback>
-              </Avatar>
+              <div className="relative">
+                <div
+                  className="pointer-events-none absolute -inset-2 rounded-full opacity-60 blur-xl"
+                  style={{
+                    background: "radial-gradient(circle, hsl(345 70% 50% / 0.35), transparent 70%)",
+                  }}
+                  aria-hidden
+                />
+                <Avatar className="relative h-32 w-32 border border-white/30 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] ring-2 ring-white/15">
+                  <AvatarImage src={aboutPortrait} alt="Samuel John" className="object-cover object-[center_18%]" />
+                  <AvatarFallback className="overflow-hidden bg-card p-0">
+                    <img src={BRAND_LOGO} alt="" className="h-full w-full object-cover" />
+                  </AvatarFallback>
+                </Avatar>
+              </div>
             </div>
             <p className="mb-2 font-mono text-sm tracking-widest text-white uppercase">About Me</p>
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">

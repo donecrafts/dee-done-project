@@ -10,6 +10,7 @@ import {
   projects,
   categories,
   projectLiveLinkLabel,
+  projectGithubLink,
   projectCardImageClass,
   projectCardMediaBackdropClass,
   projectLiveRibbon,
@@ -35,8 +36,9 @@ const ProjectsPage = () => {
               My <span className="gradient-neon-text neon-text">Projects</span>
             </h1>
             <p className="mx-auto max-w-xl text-lg text-white/85">
-              A collection of applications I've built across various domains and technologies.
+              A collection of applications I&apos;ve built across various domains and technologies.
             </p>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-white/70">Ask by voice for any project — use the mic button on the right.</p>
           </div>
         </div>
       </section>
@@ -109,9 +111,9 @@ const ProjectsPage = () => {
                     >
                       <ExternalLink className="h-3.5 w-3.5" /> {projectLiveLinkLabel(project.live)}
                     </a>
-                    {project.github ? (
+                    {projectGithubLink(project) ? (
                       <a
-                        href={project.github}
+                        href={projectGithubLink(project)!}
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center gap-2 rounded-lg border border-primary/40 bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--neon)/0.15)]"

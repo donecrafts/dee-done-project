@@ -5,6 +5,7 @@ import spentzyAppstoreArt from "@/assets/spentzy-appstore.jpg";
 import vojourAppstoreArt from "@/assets/vojour-appstore.jpg";
 import bluffingMonkeysArt from "@/assets/bluffing-monkeys.jpg";
 import pokerbrosAppstoreArt from "@/assets/pokerbros-appstore.jpg";
+import comfyuiWorkflowArt from "@/assets/comfyui-skill.png";
 
 export type ProjectCategory = "All" | "SaaS" | "Web" | "Mobile";
 
@@ -64,6 +65,76 @@ export function projectLiveRibbon(project: Project): { title: string; subtitle?:
 
 export const projects: Project[] = [
   {
+    slug: "pokerbros-your-poker-app",
+    title: "PokerBROS - Your Poker App",
+    description:
+      "Social poker app for iPhone and iPad play Texas Hold'em, Omaha, Short Deck, and more with friends in private clubs, MTTs, Sit & Gos, and customizable tables.",
+    longDescription:
+      "PokerBROS lets players of every level enjoy poker online with friends anytime. Create private clubs and poker rooms, run tournaments, join the global lobby, and choose from NLH, PLO, fixed-limit formats, Short Deck, and Open Face Chinese. Features include Kill Pot modes, in-table chat, avatar emotes, certified RNG, and 24/7 support. Social Networking on the App Store by Thinklean Limited (iOS 9+). Listing: https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
+    image: pokerbrosAppstoreArt,
+    cardImageFit: "contain",
+    techs: ["iOS", "iPad", "Mobile"],
+    category: "Mobile",
+    live: "https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
+    featured: true,
+    features: [
+      "No Limit & Fixed Limit Texas Hold'em, PLO, Short Deck, and OFC",
+      "Private clubs with custom tables, rules, and invited players",
+      "Multi Table Tournaments and Sit & Go formats",
+      "Kill Pot option for fixed-limit games",
+      "In-table chat, emotes, and customizable avatars and themes",
+      "Certified RNG with audited game integrity",
+    ],
+    gallery: [pokerbrosAppstoreArt, pokerbrosAppstoreArt],
+  },
+  {
+    slug: "comfy-ui-workflow",
+    title: "Wan 2.2 LoRA Training Pipeline",
+    description:
+      "End-to-end ComfyUI-ready pipeline for training Wan 2.2 dual-expert LoRAs—dataset prep scripts, RunPod configs, and revision fine-tuning for consistent AI character generation.",
+    longDescription:
+      "Open-source workflow for training a Wan 2.2 dual-expert LoRA (high/low noise) for AI influencer and character consistency, built with Ostris AI Toolkit on RunPod. Includes Python dataset tools (merge sources, split turnaround sheets, crop overlays, captions), RunPod deployment steps, YAML training configs for v1 and revision passes, and recommended ComfyUI settings for loading both safetensors experts. Code and configs are MIT; client training data and weights stay private. Repository: https://github.com/donecrafts/comfy-ui-workflow",
+    image: comfyuiWorkflowArt,
+    cardImageFit: "contain",
+    techs: ["ComfyUI", "Python", "Wan 2.2", "LoRA", "RunPod"],
+    category: "Web",
+    live: "https://github.com/donecrafts/comfy-ui-workflow",
+    github: "https://github.com/donecrafts/comfy-ui-workflow",
+    featured: true,
+    features: [
+      "Dataset prep: merge sources, split sheets, crop overlays, auto-captions",
+      "Wan 2.2 T2V A14B dual-expert LoRA training (rank 32, flow-match)",
+      "RunPod A40 configs with step-by-step deployment guide",
+      "Revision fine-tune pass from v1 weights for tighter character consistency",
+      "ComfyUI settings for high/low noise safetensors (0.75–0.85 strength)",
+      "MIT-licensed scripts and YAML configs on GitHub",
+    ],
+    gallery: [comfyuiWorkflowArt, comfyuiWorkflowArt],
+  },
+  {
+    slug: "spentzy",
+    title: "Spentzy",
+    description:
+      "Minimal expense tracker for iPhone log spending in a few taps, see weekly and monthly patterns, and keep everything on your device with no accounts or cloud.",
+    longDescription:
+      "Spentzy focuses on habit-building simplicity: open the app, enter the amount and what it was for, and move on. You get instant clarity on spending patterns, weekly and monthly breakdowns, and auto-generated category insights without configuring categories or linking bank accounts. Data stays on-device—no cloud sync, no accounts, no servers. Finance app on the App Store by Max Goldenberg (Goldenmax Corp); iOS 15.1+. Listing: https://apps.apple.com/us/app/spentzy/id6758644577",
+    image: spentzyAppstoreArt,
+    cardImageFit: "contain",
+    techs: ["Swift", "iOS", "SwiftUI"],
+    category: "Mobile",
+    live: "https://apps.apple.com/us/app/spentzy/id6758644577",
+    featured: true,
+    features: [
+      "Three-tap expense logging—amount, note, done",
+      "Weekly and monthly spending breakdowns",
+      "Category insights generated automatically—no setup",
+      "Analytics-friendly charts (e.g. six-month bar overview)",
+      "On-device storage only—privacy-first, no sign-in",
+      "Currency format options for international use",
+    ],
+    gallery: [spentzyAppstoreArt, spentzyAppstoreArt],
+  },
+  {
     slug: "sauce-recipes-meal-planner",
     title: "Sauce: Recipes & Meal Planner",
     description:
@@ -108,52 +179,6 @@ export const projects: Project[] = [
       "24/7 human support channel for club access and questions",
     ],
     gallery: [bluffingMonkeysArt, bluffingMonkeysArt],
-  },
-  {
-    slug: "pokerbros-your-poker-app",
-    title: "PokerBROS - Your Poker App",
-    description:
-      "Social poker app for iPhone and iPad play Texas Hold'em, Omaha, Short Deck, and more with friends in private clubs, MTTs, Sit & Gos, and customizable tables.",
-    longDescription:
-      "PokerBROS lets players of every level enjoy poker online with friends anytime. Create private clubs and poker rooms, run tournaments, join the global lobby, and choose from NLH, PLO, fixed-limit formats, Short Deck, and Open Face Chinese. Features include Kill Pot modes, in-table chat, avatar emotes, certified RNG, and 24/7 support. Social Networking on the App Store by Thinklean Limited (iOS 9+). Listing: https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
-    image: pokerbrosAppstoreArt,
-    cardImageFit: "contain",
-    techs: ["iOS", "iPad", "Mobile"],
-    category: "Mobile",
-    live: "https://apps.apple.com/gb/app/pokerbros-your-poker-app/id1463376042",
-    featured: true,
-    features: [
-      "No Limit & Fixed Limit Texas Hold'em, PLO, Short Deck, and OFC",
-      "Private clubs with custom tables, rules, and invited players",
-      "Multi Table Tournaments and Sit & Go formats",
-      "Kill Pot option for fixed-limit games",
-      "In-table chat, emotes, and customizable avatars and themes",
-      "Certified RNG with audited game integrity",
-    ],
-    gallery: [pokerbrosAppstoreArt, pokerbrosAppstoreArt],
-  },
-  {
-    slug: "spentzy",
-    title: "Spentzy",
-    description:
-      "Minimal expense tracker for iPhone log spending in a few taps, see weekly and monthly patterns, and keep everything on your device with no accounts or cloud.",
-    longDescription:
-      "Spentzy focuses on habit-building simplicity: open the app, enter the amount and what it was for, and move on. You get instant clarity on spending patterns, weekly and monthly breakdowns, and auto-generated category insights without configuring categories or linking bank accounts. Data stays on-device—no cloud sync, no accounts, no servers. Finance app on the App Store by Max Goldenberg (Goldenmax Corp); iOS 15.1+. Listing: https://apps.apple.com/us/app/spentzy/id6758644577",
-    image: spentzyAppstoreArt,
-    cardImageFit: "contain",
-    techs: ["Swift", "iOS", "SwiftUI"],
-    category: "Mobile",
-    live: "https://apps.apple.com/us/app/spentzy/id6758644577",
-    featured: true,
-    features: [
-      "Three-tap expense logging—amount, note, done",
-      "Weekly and monthly spending breakdowns",
-      "Category insights generated automatically—no setup",
-      "Analytics-friendly charts (e.g. six-month bar overview)",
-      "On-device storage only—privacy-first, no sign-in",
-      "Currency format options for international use",
-    ],
-    gallery: [spentzyAppstoreArt, spentzyAppstoreArt],
   },
   {
     slug: "instarecipe-ai-recipe-scanner",
@@ -251,5 +276,13 @@ export const categories: ProjectCategory[] = ["All", "SaaS", "Web", "Mobile"];
 export function projectLiveLinkLabel(url: string): string {
   if (url.includes("apps.apple.com")) return "App Store";
   if (url.includes("producthunt.com")) return "Product Hunt";
+  if (url.includes("github.com")) return "View on GitHub";
   return "Visit Site";
+}
+
+/** Hide duplicate GitHub CTA when live and github point to the same repo. */
+export function projectGithubLink(project: Project): string | null {
+  if (!project.github) return null;
+  if (project.github === project.live) return null;
+  return project.github;
 }
