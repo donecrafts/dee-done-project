@@ -59,10 +59,9 @@ const WelcomeScreen = () => {
   }, [show, reducedMotion]);
 
   const enterPortfolio = useCallback((goToProjects = false) => {
-    if (!spokeRef.current) {
-      speakWelcome();
-      spokeRef.current = true;
-    }
+    // Always speak on this click — browsers often block the timed auto-speak.
+    speakWelcome();
+    spokeRef.current = true;
     sessionStorage.setItem(WELCOME_STORAGE_KEY, "1");
     setShow(false);
     if (goToProjects) {

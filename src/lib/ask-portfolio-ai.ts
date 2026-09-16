@@ -1,3 +1,5 @@
+import { processVoiceQuery } from "@/lib/voice-portfolio-agent";
+
 export type ChatMessage = {
   role: "user" | "assistant";
   content: string;
@@ -9,30 +11,49 @@ export type PortfolioAIResponse = {
   scroll: string | null;
 };
 
+function localPortfolioReply(message: string): PortfolioAIResponse {
+  const action = processVoiceQuery(message);
+  if (action.type === "navigate") {
+    return { reply: action.message, navigate: action.path, scroll: null };
+  }
+  if (action.type === "scroll") {
+    return { reply: action.message, navigate: null, scroll: action.sectionId };
+  }
+  return { reply: action.message, navigate: null, scroll: null };
+}
+
 export async function askPortfolioAI(
   message: string,
   history: ChatMessage[] = [],
 ): Promise<PortfolioAIResponse> {
-  const res = await fetch("/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message, history }),
-  });
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history }),
+    });
 
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    throw new Error(
-      typeof data?.error === "string"
-        ? data.error
-        : "Could not reach the AI assistant. Check your connection and OPENAI_API_KEY.",
-    );
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      // Keep voice usable on Vercel when OPENAI_API_KEY is missing.
+      if (res.status === 503 || res.status === 401 || res.status === 429) {
+        return localPortfolioReply(message);
+      }
+      throw new Error(
+        typeof data?.error === "string"
+          ? data.error
+          : "Could not reach the AI assistant. Check your connection and OPENAI_API_KEY.",
+      );
+    }
+
+    return {
+      reply: String(data.reply || "I'm here — ask me anything."),
+      navigate: typeof data.navigate === "string" ? data.navigate : null,
+      scroll: typeof data.scroll === "string" ? data.scroll : null,
+    };
+  } catch {
+    return localPortfolioReply(message);
   }
-
-  return {
-    reply: String(data.reply || "I'm here — ask me anything."),
-    navigate: typeof data.navigate === "string" ? data.navigate : null,
-    scroll: typeof data.scroll === "string" ? data.scroll : null,
-  };
 }
 
 /** Typewriter / writing-out effect. Returns a cancel function. */
