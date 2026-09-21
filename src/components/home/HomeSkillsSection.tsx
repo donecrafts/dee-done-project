@@ -1,9 +1,9 @@
 import { useInView } from "@/hooks/use-in-view";
 import { homeSkillCards } from "@/data/homeSkills";
-import { Brain, Bot, Server, Database, Smartphone, Cloud, Workflow, Megaphone } from "lucide-react";
+import { Brain, Bot, Server, Database, Smartphone, Cloud, Workflow, Megaphone, QrCode, CreditCard, ShoppingBag } from "lucide-react";
 import { SKILLS_INTRO, toBrandScript } from "@/config/brand-copy";
 
-const icons = [Brain, Bot, Server, Workflow, Megaphone, Database, Smartphone, Cloud] as const;
+const icons = [Brain, QrCode, CreditCard, ShoppingBag, Bot, Server, Workflow, Megaphone, Database, Smartphone, Cloud] as const;
 
 const HomeSkillsSection = () => {
   const [ref, inView] = useInView<HTMLElement>(0.1);

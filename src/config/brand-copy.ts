@@ -50,7 +50,7 @@ export const PROJECTS_INTRO = toBrandScript(
 );
 
 export const SKILLS_INTRO = toBrandScript(
-  "I use Python, AI, machine learning, APIs, and modern tools to turn ideas into real products.",
+  "I use Python, AI, QR codes, barcodes, loyalty cards, e-commerce, machine learning, APIs, and modern tools to turn ideas into real products.",
 );
 
 export const CONTACT_INTRO = toBrandScript(

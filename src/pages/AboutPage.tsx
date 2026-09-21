@@ -7,12 +7,12 @@ import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Code2, Server, Cloud, Wrench, Download, Briefcase } from "lucide-react";
+import { Code2, Server, Cloud, Wrench, Download, Briefcase, QrCode, CreditCard, ShoppingBag } from "lucide-react";
 import aboutPortrait from "@/assets/about-portrait.jpg";
 import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
 import { ABOUT_BIO } from "@/config/brand-copy";
 
-const techs = ["Python", "FastAPI", "ComfyUI", "AI Automation", "GoHighLevel", "React", "PostgreSQL", "Docker", "AWS", "OpenAI API", "Tailwind CSS"];
+const techs = ["Python", "FastAPI", "ComfyUI", "QR Codes", "Barcodes", "Loyalty Cards", "E-Commerce", "AI Automation", "GoHighLevel", "React", "PostgreSQL", "Docker", "AWS", "OpenAI API", "Tailwind CSS"];
 
 const timeline = [
   { year: "2024 – Present", role: "Python & AI Developer", company: "Independent / Product Builder", desc: "Building AI-powered mobile and web applications, including intelligent recipe extraction and production app launches." },
@@ -23,6 +23,9 @@ const timeline = [
 
 const skillCategories = [
   { icon: Code2, title: "Python & AI", skills: ["Python", "FastAPI", "ComfyUI", "OpenAI API", "AI Automation", "scikit-learn"] },
+  { icon: QrCode, title: "QR & Barcodes", skills: ["QR Design", "Barcodes", "Wallet Passes", "Branded Scannables", "Print & Signage", "Loyalty Flows"] },
+  { icon: CreditCard, title: "Loyalty Cards", skills: ["Apple Wallet", "Google Wallet", "Stamp Cards", "Rewards", "Push Offers", "Merchant Scanning"] },
+  { icon: ShoppingBag, title: "E-Commerce", skills: ["Online Stores", "Catalogues", "Checkout", "Multi-branch Retail", "Trade Accounts", "Marketplaces"] },
   { icon: Server, title: "Backend & Data", skills: ["REST APIs", "GraphQL", "PostgreSQL", "MongoDB", "Redis", "ETL Pipelines"] },
   { icon: Cloud, title: "DevOps", skills: ["Docker", "AWS", "CI/CD", "Linux", "Nginx", "Vercel"] },
   { icon: Wrench, title: "Automation & Tools", skills: ["GoHighLevel", "ComfyUI", "AI Automation", "React", "TypeScript", "Figma"] },

@@ -14,10 +14,24 @@ Identity & owner facts:
 - Email: doneporpor@gmail.com
 - X/Twitter: @donecraft225 (https://x.com/donecraft225)
 - GitHub: https://github.com/donecrafts
-- Skills: Python, FastAPI, ComfyUI, Wan 2.2 LoRA training, AI automation, GoHighLevel, React, TypeScript, PostgreSQL, Docker, AWS, OpenAI API
+- Skills: Python, FastAPI, ComfyUI, Wan 2.2 LoRA training, AI automation, QR codes & barcodes, loyalty card creation (Apple/Google Wallet), e-commerce platforms, branded scannables, GoHighLevel, React, TypeScript, PostgreSQL, Docker, AWS, OpenAI API
 - Projects (with site paths):
+  - Artvizual Branded QR for Gyms → /projects/artvizual-gym-fitness-qr
+  - GPASS Loyalty → /projects/gpass-loyalty (https://www.gpass.es/)
+  - reloop Digital Stamp Cards → /projects/reloop-cards (https://www.reloop.cards/)
+  - Bluebird Evolv Rewards → /projects/bluebird-evolv-rewards (https://bluebird-restaurant.co.uk/rewards/)
+  - Gusto Italian → /projects/gusto-italian (https://gustorestaurants.com/)
+  - Franco Manca → /projects/franco-manca (https://www.francomanca.co.uk/)
+  - GymHQ → /projects/gymhq (https://www.gymhq.ng/)
+  - FitHQ → /projects/fithq (https://fithq.ng/)
+  - mySmartAccessCard → /projects/mysmartaccesscard (https://mysmartaccesscard.com/)
+  - KARTLE → /projects/kartle (https://www.kartle.io/en)
+  - Egen Active → /projects/egen-active (https://egenactive.com/)
+  - KYGA Digital → /projects/kyga-digital (https://kyga.co.uk/)
+  - MKM Building Supplies → /projects/mkm-building-supplies (https://mkm.com/)
+  - Materials Market → /projects/materials-market (https://materialsmarket.com/)
   - PokerBROS → /projects/pokerbros-your-poker-app
-  - Wan 2.2 LoRA Training Pipeline → /projects/comfy-ui-workflow (GitHub: donecrafts/comfy-ui-workflow)
+  - Wan 2.2 LoRA Training Pipeline → /projects/comfy-ui-workflow
   - Spentzy → /projects/spentzy
   - Sauce: Recipes & Meal Planner → /projects/sauce-recipes-meal-planner
   - Bluffing Monkeys → /projects/bluffing-monkeys
