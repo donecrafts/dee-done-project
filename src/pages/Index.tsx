@@ -30,18 +30,16 @@ const FeaturedProjects = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => {
+          {projects.filter((p) => p.featured).slice(0, 6).map((project, i) => {
             const ribbon = projectLiveRibbon(project);
             return (
             <Link
               key={project.slug}
               to={`/projects/${project.slug}`}
               className={`group relative rounded-2xl border border-border bg-card overflow-hidden shadow-sm transition-all duration-500 hover:border-primary/25 hover:shadow-[0_0_40px_hsl(var(--neon)/0.08)] ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-              style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
+              style={{ transitionDelay: inView ? `${i * 80}ms` : "0ms" }}
             >
-              {project.featured && (
-                <Badge className="absolute right-4 top-4 z-20 rounded-full bg-primary text-primary-foreground shadow-md">Featured</Badge>
-              )}
+              <Badge className="absolute right-4 top-4 z-20 rounded-full bg-primary text-primary-foreground shadow-md">Featured</Badge>
               <div className="relative overflow-hidden border-b border-border/30">
                 {ribbon ? (
                   <div className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between gap-2 border-b border-white/10 bg-black/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white/95 backdrop-blur-md">

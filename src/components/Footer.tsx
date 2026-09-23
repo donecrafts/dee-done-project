@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
-import { Github, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Github, Mail, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BRAND_NAME } from "@/config/brand";
 import { FOOTER_BLURB } from "@/config/brand-copy";
@@ -33,11 +33,6 @@ const socials = [
     icon: WhatsAppIcon,
     href: "https://wa.me/13438913888",
     label: "WhatsApp",
-  },
-  {
-    icon: Twitter,
-    href: "https://x.com/donecraft225",
-    label: "Twitter / X",
   },
   { icon: Mail, href: "mailto:doneporpor@gmail.com", label: "Email" },
 ] as const;

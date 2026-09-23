@@ -1,37 +1,21 @@
-import { useCallback, useState } from "react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
-import { PAGE_AMBIENT_VIDEO, PAGE_AMBIENT_VIDEO_FALLBACK } from "@/config/videos";
 
 /**
- * Fixed full-viewport video behind page content (separate asset from the hero section).
+ * Lightweight fixed wash behind page content (no video — keeps the site fast).
  */
 const AmbientPageBackground = () => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-  const [src, setSrc] = useState(PAGE_AMBIENT_VIDEO);
-
-  const onVideoError = useCallback(() => {
-    setSrc((current) => (current === PAGE_AMBIENT_VIDEO ? PAGE_AMBIENT_VIDEO_FALLBACK : current));
-  }, []);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[1] overflow-hidden" aria-hidden>
-      <video
-        key={src}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        onError={onVideoError}
-        className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-[0.62] dark:opacity-50"
-        src={src}
-      />
       <div
         className={cn(
-          "absolute inset-0 backdrop-blur-[0.5px]",
-          isDark ? "bg-[hsl(350_45%_20%/0.82)]" : "bg-[hsl(0_0%_100%/0.72)]",
+          "absolute inset-0",
+          isDark
+            ? "bg-[radial-gradient(ellipse_at_top,_hsl(345_40%_22%/_0.55),_transparent_55%),linear-gradient(180deg,_hsl(350_30%_12%),_hsl(350_25%_8%))]"
+            : "bg-[radial-gradient(ellipse_at_top,_hsl(345_50%_95%/_0.9),_transparent_55%),linear-gradient(180deg,_hsl(0_0%_100%),_hsl(345_20%_97%))]",
         )}
       />
     </div>

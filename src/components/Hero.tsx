@@ -1,17 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Download } from "lucide-react";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import { ArrowRight } from "lucide-react";
 import { BRAND_LOGO, BRAND_NAME } from "@/config/brand";
 import ProjectPhonesBackground from "@/components/ProjectPhonesBackground";
 import { HERO_TAGLINE } from "@/config/brand-copy";
@@ -68,31 +57,13 @@ const Hero = () => {
           >
             Hire me
           </Link>
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 bg-transparent px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
-              >
-                <Download className="h-4 w-4" />
-                Download CV
-              </button>
-            </AlertDialogTrigger>
-            <AlertDialogContent className="glass-strong rounded-2xl border-primary/20">
-              <AlertDialogHeader>
-                <AlertDialogTitle className="text-foreground">Download CV</AlertDialogTitle>
-                <AlertDialogDescription className="text-muted-foreground">
-                  Would you like to download {BRAND_NAME}&apos;s resume as a PDF?
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel className="rounded-xl border-border">Cancel</AlertDialogCancel>
-                <AlertDialogAction className="rounded-xl bg-primary text-primary-foreground hover:bg-primary/90">
-                  Download PDF
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          <Link
+            to="/projects"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 bg-transparent px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
+          >
+            View My Portfolio
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </motion.div>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-8">

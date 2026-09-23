@@ -1,26 +1,25 @@
-interface VideoBackgroundProps {
-  src: string;
-}
-
-const VideoBackground = ({ src }: VideoBackgroundProps) => {
+/**
+ * Lightweight page hero backdrop — CSS only (no multi‑MB looping videos).
+ */
+const VideoBackground = (_props: { src?: string }) => {
   return (
     <>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
-        src={src}
-      />
-      <div className="absolute inset-0 bg-[hsl(260_35%_12%/0.72)] backdrop-blur-[2px]" />
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 20%, hsl(345 55% 42% / 0.55), transparent 55%), linear-gradient(165deg, hsl(350 35% 18%) 0%, hsl(350 40% 10%) 45%, hsl(345 50% 22% / 0.85) 100%)",
+        }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-[hsl(350_40%_8%/0.35)]" aria-hidden />
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
+        aria-hidden
       />
     </>
   );

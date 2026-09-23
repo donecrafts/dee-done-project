@@ -137,11 +137,11 @@ export function processVoiceQuery(raw: string): VoiceAction {
     };
   }
 
-  if (matchesAny(q, [/who are you|who is samuel|who is done|about you|about samuel|about done craft|introduce|your name/i])) {
+  if (matchesAny(q, [/who are you|who is samuel|who is felix|who is done|about you|about samuel|about felix|about done craft|introduce|your name/i])) {
     return {
       type: "scroll",
       sectionId: "about",
-      message: `I'm ${BRAND_NAME}, a Python and AI developer focused on building smart apps that solve real problems. I build AI-powered mobile apps, web platforms, and custom software. My goal is simple: build useful technology that works well and helps people. I'm based in Osogbo, Nigeria.`,
+      message: `I'm ${BRAND_NAME}, a freelance Python and AI developer based in Wales, UK. I build AI-powered mobile apps, web platforms, custom software, and Apple Wallet and Google Wallet loyalty experiences. My goal is simple: build useful technology that works well and helps people.`,
     };
   }
 
@@ -161,10 +161,10 @@ export function processVoiceQuery(raw: string): VoiceAction {
     };
   }
 
-  if (matchesAny(q, [/location|where.*from|where.*live|nigeria|osogbo/i])) {
+  if (matchesAny(q, [/location|where.*from|where.*live|wales|uk|united kingdom|nigeria|osogbo/i])) {
     return {
       type: "speak",
-      message: "I'm based in Osogbo, Nigeria, and work with clients worldwide remotely.",
+      message: "I'm based in Wales, UK, and work with clients worldwide as a freelancer.",
     };
   }
 
@@ -197,7 +197,7 @@ export function processVoiceQuery(raw: string): VoiceAction {
     return {
       type: "navigate",
       path: "/contact",
-      message: "Opening contact. Email doneporpor@gmail.com, message on X at donecraft225, or use the contact form.",
+      message: "Opening contact. Email doneporpor@gmail.com, or use the contact form.",
     };
   }
 
@@ -209,10 +209,10 @@ export function processVoiceQuery(raw: string): VoiceAction {
     };
   }
 
-  if (matchesAny(q, [/twitter|^\sx$|donecraft/i])) {
+  if (matchesAny(q, [/twitter|^\sx$|donecraft225/i])) {
     return {
       type: "speak",
-      message: "Find me on X at donecraft225, or visit x.com/donecraft225.",
+      message: "I don't list an X account here. Reach me by email at doneporpor@gmail.com or through the contact form.",
     };
   }
 

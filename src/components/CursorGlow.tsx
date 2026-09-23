@@ -1,36 +1,56 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
+/** Soft cursor highlight — DOM style updates, no React re-renders per move. */
 const CursorGlow = () => {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const move = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-      setVisible(true);
-    };
-    const leave = () => setVisible(false);
+    const el = ref.current;
+    if (!el) return;
 
-    window.addEventListener("mousemove", move);
+    const isDark = () => document.documentElement.classList.contains("dark");
+    if (!isDark()) {
+      el.style.display = "none";
+      return;
+    }
+
+    let raf = 0;
+    let x = 0;
+    let y = 0;
+    let visible = false;
+
+    const paint = () => {
+      raf = 0;
+      el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      el.style.opacity = visible ? "1" : "0";
+    };
+
+    const move = (e: MouseEvent) => {
+      x = e.clientX;
+      y = e.clientY;
+      visible = true;
+      if (!raf) raf = requestAnimationFrame(paint);
+    };
+    const leave = () => {
+      visible = false;
+      if (!raf) raf = requestAnimationFrame(paint);
+    };
+
+    window.addEventListener("mousemove", move, { passive: true });
     window.addEventListener("mouseleave", leave);
     return () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseleave", leave);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
-  // Only show in dark mode
-  const isDark = document.documentElement.classList.contains("dark");
-  if (!isDark) return null;
-
   return (
     <div
+      ref={ref}
       className="cursor-glow"
-      style={{
-        left: pos.x,
-        top: pos.y,
-        opacity: visible ? 1 : 0,
-      }}
+      style={{ left: 0, top: 0, opacity: 0, willChange: "transform, opacity" }}
+      aria-hidden
     />
   );
 };

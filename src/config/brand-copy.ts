@@ -15,30 +15,36 @@ export function toBrandScript(text: string): string {
 
 /** Exact About Me bio (display). */
 export const ABOUT_BIO = [
-  "𝕀’m 𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋, 𝕒 ℙ𝕪𝕥𝕙𝕠𝕟 𝕒𝕟𝕕 𝔸𝕀 𝕕𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣 𝕗𝕠𝕔𝕦𝕤𝕖𝕕 𝕠𝕟 𝕓𝕦𝕚𝕝𝕕𝕚𝕟𝕘 𝕤𝕞𝕒𝕣𝕥 𝕒𝕡𝕡𝕤 𝕥𝕙𝕒𝕥 𝕤𝕠𝕝𝕧𝕖 𝕣𝕖𝕒𝕝 𝕡𝕣𝕠𝕓𝕝𝕖𝕞𝕤.",
-  "𝕀 𝕓𝕦𝕚𝕝𝕕 𝔸𝕀-𝕡𝕠𝕨𝕖𝕣𝕖𝕕 𝕞𝕠𝕓𝕚𝕝𝕖 𝕒𝕡𝕡𝕤, 𝕨𝕖𝕓 𝕡𝕝𝕒𝕥𝕗𝕠𝕣𝕞𝕤, 𝕒𝕟𝕕 𝕔𝕦𝕤𝕥𝕠𝕞 𝕤𝕠𝕗𝕥𝕨𝕒𝕣𝕖. 𝕀 𝕦𝕤𝕖 ℙ𝕪𝕥𝕙𝕠𝕟, 𝔸𝕀, 𝕞𝕒𝕔𝕙𝕚𝕟𝕖 𝕝𝕖𝕒𝕣𝕟𝕚𝕟𝕘, 𝔸ℙ𝕀𝕤, 𝕒𝕟𝕕 𝕞𝕠𝕕𝕖𝕣𝕟 𝕥𝕠𝕠𝕝𝕤 𝕥𝕠 𝕥𝕦𝕣𝕟 𝕚𝕕𝕖𝕒𝕤 𝕚𝕟𝕥𝕠 𝕣𝕖𝕒𝕝 𝕡𝕣𝕠𝕕𝕦𝕔𝕥𝕤.",
-  "𝕀 𝕨𝕠𝕣𝕜 𝕒𝕔𝕣𝕠𝕤𝕤 𝕥𝕙𝕖 𝕗𝕦𝕝𝕝 𝕤𝕥𝕒𝕔𝕜, 𝕗𝕣𝕠𝕞 𝕓𝕦𝕚𝕝𝕕𝕚𝕟𝕘 𝕓𝕒𝕔𝕜𝕖𝕟𝕕𝕤 𝕒𝕟𝕕 𝔸ℙ𝕀𝕤 𝕥𝕠 𝕒𝕕𝕕𝕚𝕟𝕘 𝔸𝕀 𝕗𝕖𝕒𝕥𝕦𝕣𝕖𝕤 𝕒𝕟𝕕 𝕔𝕣𝕖𝕒𝕥𝕚𝕟𝕘 𝕔𝕝𝕖𝕒𝕟, 𝕖𝕒𝕤𝕪-𝕥𝕠-𝕦𝕤𝕖 𝕒𝕡𝕡𝕤.",
-  "𝕄𝕪 𝕘𝕠𝕒𝕝 𝕚𝕤 𝕤𝕚𝕞𝕡𝕝𝕖: 𝕓𝕦𝕚𝕝𝕕 𝕦𝕤𝕖𝕗𝕦𝕝 𝕥𝕖𝕔𝕙𝕟𝕠𝕝𝕠𝕘𝕪 𝕥𝕙𝕒𝕥 𝕨𝕠𝕣𝕜𝕤 𝕨𝕖𝕝𝕝 𝕒𝕟𝕕 𝕙𝕖𝕝𝕡𝕤 𝕡𝕖𝕠𝕡𝕝𝕖.",
-  "𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋. 𝕋𝕒𝕜𝕖 𝕒 𝕝𝕠𝕠𝕜 𝕒𝕣𝕠𝕦𝕟𝕕 𝕒𝕟𝕕 𝕤𝕖𝕖 𝕨𝕙𝕒𝕥 𝕀 𝕔𝕒𝕟 𝕓𝕦𝕚𝕝𝕕 𝕗𝕠𝕣 𝕪𝕠𝕦.",
+  toBrandScript(
+    "I'm Done Craft, a freelance Python and AI developer based in Wales, UK — focused on building smart apps that solve real problems.",
+  ),
+  toBrandScript(
+    "I build AI-powered mobile apps, web platforms, custom software, and digital loyalty experiences for Apple Wallet and Google Wallet. I use Python, AI, machine learning, APIs, and modern tools to turn ideas into real products.",
+  ),
+  toBrandScript(
+    "As a freelancer, I work across the full stack — from backends and APIs to AI features, wallet passes, and clean, easy-to-use apps for clients worldwide.",
+  ),
+  toBrandScript("My goal is simple: build useful technology that works well and helps people."),
+  toBrandScript("Welcome to Done Craft. Take a look around and see what I can build for you."),
 ] as const;
 
 /** Plain About Me (voice, SEO, screen readers). */
 export const ABOUT_BIO_PLAIN = [
-  "I'm Done Craft, a Python and AI developer focused on building smart apps that solve real problems.",
-  "I build AI-powered mobile apps, web platforms, and custom software. I use Python, AI, machine learning, APIs, and modern tools to turn ideas into real products.",
-  "I work across the full stack, from building backends and APIs to adding AI features and creating clean, easy-to-use apps.",
+  "I'm Done Craft, a freelance Python and AI developer based in Wales, UK — focused on building smart apps that solve real problems.",
+  "I build AI-powered mobile apps, web platforms, custom software, and digital loyalty experiences for Apple Wallet and Google Wallet. I use Python, AI, machine learning, APIs, and modern tools to turn ideas into real products.",
+  "As a freelancer, I work across the full stack — from backends and APIs to AI features, wallet passes, and clean, easy-to-use apps for clients worldwide.",
   "My goal is simple: build useful technology that works well and helps people.",
   "Welcome to Done Craft. Take a look around and see what I can build for you.",
 ] as const;
 
-export const ROLE_LINE = toBrandScript("Python and AI Developer");
+export const ROLE_LINE = toBrandScript("Freelance Python and AI Developer");
 
 export const HERO_TAGLINE = toBrandScript(
-  "A Python and AI developer focused on building smart apps that solve real problems.",
+  "A freelance Python and AI developer focused on building smart apps that solve real problems.",
 );
 
 export const FOOTER_BLURB = toBrandScript(
-  "I build AI-powered mobile apps, web platforms, and custom software. Useful technology that works well and helps people.",
+  "Freelance Python and AI developer in Wales, UK. I build AI-powered apps, web platforms, and Apple Wallet & Google Wallet experiences.",
 );
 
 export const WELCOME_HEADLINE = "𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋";
@@ -50,7 +56,7 @@ export const PROJECTS_INTRO = toBrandScript(
 );
 
 export const SKILLS_INTRO = toBrandScript(
-  "I use Python, AI, QR codes, barcodes, loyalty cards, e-commerce, machine learning, APIs, and modern tools to turn ideas into real products.",
+  "I use Python, AI, QR codes, barcodes, Apple Wallet, Google Wallet, loyalty cards, e-commerce, machine learning, APIs, and modern tools to turn ideas into real products.",
 );
 
 export const CONTACT_INTRO = toBrandScript(
@@ -61,7 +67,9 @@ export const TESTIMONIALS_INTRO = toBrandScript(
   "Real feedback from people I've built with — clear work, reliable delivery, and useful results.",
 );
 
-export const META_TITLE = "𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋 — Python and AI Developer";
+export const META_TITLE = "𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋 — Freelance Python and AI Developer · Wales, UK";
 
 export const META_DESCRIPTION =
-  "𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋 — a Python and AI developer focused on building smart apps that solve real problems. AI-powered mobile apps, web platforms, and custom software.";
+  "𝔻𝕆ℕ𝔼 ℂℝ𝔸𝔽𝕋 — freelance Python and AI developer in Wales, UK. AI-powered apps, web platforms, and Apple Wallet & Google Wallet loyalty experiences.";
+
+export const LOCATION_LINE = "Wales, UK";

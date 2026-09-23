@@ -12,9 +12,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Mail, MapPin, Twitter, Github } from "lucide-react";
+import { Mail, MapPin, Github } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import { CONTACT_INTRO } from "@/config/brand-copy";
+import { CONTACT_INTRO, LOCATION_LINE } from "@/config/brand-copy";
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView<HTMLElement>(0.1);
@@ -60,22 +60,6 @@ const ContactPage = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-                      <Twitter className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">X Profile</p>
-                      <a
-                        href="https://x.com/donecraft225"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-medium text-card-foreground transition-colors hover:text-primary"
-                      >
-                        @donecraft225
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
                     <div className="card-icon-badge flex h-10 w-10 items-center justify-center rounded-xl">
                       <Github className="h-5 w-5" />
                     </div>
@@ -97,7 +81,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium text-card-foreground">Osogbo, Nigeria</p>
+                      <p className="font-medium text-card-foreground">{LOCATION_LINE}</p>
                     </div>
                   </div>
                 </div>

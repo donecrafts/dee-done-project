@@ -1,7 +1,7 @@
 import { useInView } from "@/hooks/use-in-view";
-import { Mail, MapPin, Twitter } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import { CONTACT_INTRO } from "@/config/brand-copy";
+import { CONTACT_INTRO, LOCATION_LINE } from "@/config/brand-copy";
 
 const iconBoxClass =
   "card-icon-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-xl";
@@ -47,21 +47,9 @@ const HomeContactTeaser = () => {
               </div>
               <div>
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Address</p>
-                <p className="font-medium text-foreground">Osogbo, Nigeria</p>
+                <p className="font-medium text-foreground">{LOCATION_LINE}</p>
               </div>
             </div>
-
-            <a href="https://x.com/donecraft225" target="_blank" rel="noreferrer" className="block">
-              <div className={cardClass}>
-                <div className={iconBoxClass}>
-                  <Twitter className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">X Profile</p>
-                  <p className="font-medium text-foreground">@donecraft225</p>
-                </div>
-              </div>
-            </a>
           </div>
 
           <div

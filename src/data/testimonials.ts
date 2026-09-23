@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
     name: "owen_aroberts",
     role: "Australia · $600–$800 · 2 weeks",
     quote:
-      "Samuel is fantastic, he's passionate patient and very knowledgeable he has helped me on a recent project and I couldn't recommend him more!",
+      "Felix is fantastic, he's passionate patient and very knowledgeable he has helped me on a recent project and I couldn't recommend him more!",
     initials: "O",
     image:
       "https://images.unsplash.com/photo-1544727635-3fb6469f5a39?w=128&h=128&fit=crop&crop=faces&q=80",
@@ -23,7 +23,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "freshhorizons",
     role: "United States · $50–$100 · 1 day",
-    quote: "It was a great experience working with Samuel.",
+    quote: "It was a great experience working with Felix.",
     initials: "FH",
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=128&h=128&fit=crop&crop=faces&q=80",
@@ -32,7 +32,7 @@ export const testimonials: Testimonial[] = [
     name: "uzayaltiner",
     role: "Turkey · $50–$100 · 1 day",
     quote:
-      "Samuel resolved my problem very quickly and explained everything I needed to know in detail.",
+      "Felix resolved my problem very quickly and explained everything I needed to know in detail.",
     initials: "u",
     image:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=128&h=128&fit=crop&crop=faces&q=80",
@@ -42,7 +42,7 @@ export const testimonials: Testimonial[] = [
     name: "danou20",
     role: "Israel · Repeat client · $100–$200 · 1 day",
     quote:
-      "Samuel is an incredibly professional person I recommend him without hesitation. Clear communication and delivery exactly as promised.",
+      "Felix is an incredibly professional person I recommend him without hesitation. Clear communication and delivery exactly as promised.",
     initials: "D",
     image:
       "https://images.unsplash.com/photo-1545167622-3a6f238d33d7?w=128&h=128&fit=crop&crop=faces&q=80",
@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
     name: "kedlohou",
     role: "Senegal · Repeat client · Up to $50 · 4 days",
     quote:
-      "Thank you, Samuel we've been working together for two years now, and your work is always professional. Reliable every time.",
+      "Thank you, Felix we've been working together for two years now, and your work is always professional. Reliable every time.",
     initials: "K",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128&h=128&fit=crop&crop=faces&q=80",
@@ -60,7 +60,7 @@ export const testimonials: Testimonial[] = [
     name: "fisher889",
     role: "United Arab Emirates · Repeat client · Up to $50 · 1 day",
     quote:
-      "Excellent experience working with Samuel. Communication was clear and timely throughout the project, and the work was delivered bug-free with great attention to detail. Samuel demonstrated a deep understanding of the requirements and even went above and beyond by suggesting improvements that enhanced the final result. Very professional and reliable. Highly recommended, and I would definitely work with Samuel again.",
+      "Excellent experience working with Felix. Communication was clear and timely throughout the project, and the work was delivered bug-free with great attention to detail. Felix demonstrated a deep understanding of the requirements and even went above and beyond by suggesting improvements that enhanced the final result. Very professional and reliable. Highly recommended, and I would definitely work with Felix again.",
     initials: "FI",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=128&h=128&fit=crop&crop=faces&q=80",
